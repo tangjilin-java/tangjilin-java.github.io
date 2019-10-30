@@ -97,4 +97,4 @@ theme: landscape
 deploy:
   type: git
   repo: git@github.com:tangjilin-java/tangjilin-java.github.io.git
-  branch: master
+  branch: public
