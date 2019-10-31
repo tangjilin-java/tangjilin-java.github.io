@@ -1,7 +1,8 @@
 ---
 title: Java发展前景
 date: 2019-10-30 18:56:34
-tags:
+tags: ["Java","发展"]
+categories: ["Java"]
 ---
 ##Java发展前景
 Java语言完全满足了PC的条件,在减少内存,直接在各类电子产品中运行,在网络中可被任何设备所识别,

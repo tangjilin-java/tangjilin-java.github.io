@@ -8,7 +8,7 @@ subtitle: 汤吉林的技术博客 不定时更新Java技术知识
 description: Java技术 SpringBoot
 keywords:
 author: 汤吉林
-language: en
+language: zh-CN
 timezone:
 
 # URL
@@ -90,7 +90,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
