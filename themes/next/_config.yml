@@ -184,9 +184,10 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/tangjilin-java || github
-  E-Mail: mailto:tjl1037766906@163.com || envelope
+  E-Mail: mailto:tjl1037766906@163.com || envelope-open
   QQ: mailto:abtjl@foxmail.com || qq
-  #Weibo: https://weibo.com/yourname || weibo
+  #Community: http://www.abtjlwxj.club/tscommunity/ || twitch
+  Weibo:  https://weibo.com/u/6892464345 || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -209,7 +210,9 @@ links_settings:
   layout: block
 
 links:
-  #Title: http://example.com
+  汤氏问答社区:  http://www.abtjlwxj.club/tscommunity/
+  哔哩哔哩: https://www.bilibili.com/
+  百度一下: https://www.baidu.com/
 
 # Table of Contents in the Sidebar
 toc:
