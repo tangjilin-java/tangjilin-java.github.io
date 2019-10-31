@@ -42,8 +42,8 @@ page:
   totally: 共有
   tags: 标签
 footer:
-  powered: "由 %s 强力驱动"
-  theme: 主题
+  powered: "个人专属"
+  theme: 博客
   total_views: 总访问量
   total_visitors: 总访客量
 counter:
