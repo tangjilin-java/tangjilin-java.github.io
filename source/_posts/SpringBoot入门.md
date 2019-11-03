@@ -10,49 +10,49 @@ categories: ["Java"]
 
 # 一、Spring框架概述
 
-## 1.1 什么是Spring
+## 什么是Spring
 
 Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson 在其著作《Expert One-On-One J2EE Development and Design》。Spring是为了解决企业级应用开发的复杂性而创建的，使用Spring可以让简单的JavaBean实现之前只有EJB才能完成的事情。但是Spring不仅仅局限于服务器端开发，任何Java应用都能在简单性、可测试性和松耦合性等方面从Spring中获益。
 <!-- more -->
-## 1.2 Spring是如何简化Java开发的
+## Spring是如何简化Java开发的
 
 为了降低Java开发的复杂性，Spring采用了以下4种关键策略：
 
-### 1、基于POJO的轻量级和最小侵入性编程；
+### 基于POJO的轻量级和最小侵入性编程；
 
-### 2、通过依赖注入（DI）和面向接口实现松耦合；
+### 通过依赖注入（DI）和面向接口实现松耦合；
 
-### 3、基于切面（AOP）和惯例进行声明式编程；
+### 基于切面（AOP）和惯例进行声明式编程；
 
-### 4、通过切面和模版减少样式代码；
+### 通过切面和模版减少样式代码；
 
 ---
 ---
 # 二、SpringBoot简介
 
-## 2.1什么是SpringBoot
+## 什么是SpringBoot
 
 Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设计是为了让你尽可能快的跑起来 Spring 应用程序并且尽可能减少你的配置文件。简单来说就是SpringBoot其实不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包，spring boot整合了所有的框架（不知道这样比喻是否合适）。
 
-## 2.2、SpringBoot四个主要特性
+## SpringBoot四个主要特性
 
-### 1、SpringBoot Starter：他将常用的依赖分组进行了整合，将其合并到一个依赖中，这样就可以一次性添加到项目的Maven或Gradle构建中；
+### SpringBoot Starter：他将常用的依赖分组进行了整合，将其合并到一个依赖中，这样就可以一次性添加到项目的Maven或Gradle构建中；
 
-### 2、自动配置：SpringBoot的自动配置特性利用了Spring4对条件化配置的支持，合理地推测应用所需的bean并自动化配置他们；
+### 自动配置：SpringBoot的自动配置特性利用了Spring4对条件化配置的支持，合理地推测应用所需的bean并自动化配置他们；
 
-### 3、命令行接口：（Command-line-interface, CLI）：SpringBoot的CLI发挥了Groovy编程语言的优势，并结合自动配置进一步简化Spring应用的开发；
+### 命令行接口：（Command-line-interface, CLI）：SpringBoot的CLI发挥了Groovy编程语言的优势，并结合自动配置进一步简化Spring应用的开发；
 
-### 4、Actuatir：它为SpringBoot应用的所有特性构建一个小型的应用程序。但首先，我们快速了解每项特性，更好的体验他们如何简化Spring编程模型。
+### Actuatir：它为SpringBoot应用的所有特性构建一个小型的应用程序。但首先，我们快速了解每项特性，更好的体验他们如何简化Spring编程模型。
 
-## 2.3 SpringBoot开发的具体好处
+## SpringBoot开发的具体好处
 
 回顾我们之前的 SSM 项目，搭建过程还是比较繁琐的，需要：
 
-### 1、配置web.xml，加载spring和spring mvc
+### 配置web.xml，加载spring和spring mvc
 
-### 2、配置数据库连接、配置spring事务
+### 配置数据库连接、配置spring事务
 
-### 3、配置加载配置文件的读取，开启注解
+### 配置加载配置文件的读取，开启注解
 
 
 #### 配置完成之后部署tomcat 调试
@@ -63,13 +63,13 @@ Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设
 ---
 # 三、使用IDEA快速搭建SpringBoot项目
 
-## 1、file->new project 在弹出的窗口选择Spring Initializr
+## file->new project 在弹出的窗口选择Spring Initializr
 
-## 2、修改项目信息
+## 修改项目信息
 
-## 3、选择版本及项目需要的依赖
+## 选择版本及项目需要的依赖
 
-## 4、最终目录结构
+## 最终目录结构
 
  
 
@@ -84,7 +84,7 @@ Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设
 ---
 # 四、项目简单介绍及helloworld编写
 
-## 4.1、写一个helloWorld接口
+## 写一个helloWorld接口
 ```
     @RestController
     @RequestMapping("/")
@@ -99,7 +99,7 @@ Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设
 ```
  
 
-## 4.2、单元测试
+## 单元测试
 ```
     @RunWith(SpringRunner.class)
     @SpringBootTest
@@ -122,7 +122,7 @@ Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设
 ```
  
 
-## 4.3、pom文件介绍
+## pom文件介绍
 ```
     <?xml version="1.0" encoding="UTF-8"?>
     <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -216,7 +216,7 @@ Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设
 
  
 
-## 4.4、启动类介绍（*Application）
+## 启动类介绍（*Application）
 ```
     @SpringBootApplication
     public class EurekaServerApplication {
@@ -229,7 +229,7 @@ Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设
 ```
  
 
-## 4.5. properties介绍
+## properties介绍
 
 springBoot 使用一个全局的配置文件 application.properties 或 application.yml，放置在【src/main/resources】目录下
 
