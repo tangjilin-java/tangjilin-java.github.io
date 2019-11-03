@@ -244,7 +244,7 @@
           {%- if theme.tag_icon %}
             {%- set tag_indicate = '<i class="fa fa-tag"></i>' %}
           {% else %}
-            {%- set tag_indicate = '#' %}
+            {%- set tag_indicate = '@' %}
           {%- endif %}
           <div class="post-tags">
             {%- for tag in post.tags.toArray() %}
