@@ -3,7 +3,7 @@ layout: pages
 title: SpringBoot入门
 date: 2019-10-31 14:50:35
 tags: ["Java","SpringBoot"]
-categories: ["Java"]
+categories: ["Spring"]
 ---
 ## Springboot入门介绍
 ---
