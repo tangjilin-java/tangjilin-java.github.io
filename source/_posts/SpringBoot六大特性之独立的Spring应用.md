@@ -6,7 +6,7 @@ tags: ["Java","SpringBoot"]
 categories: ["Spring"]
 ---
 # SpringBoot六大特性之独立的Spring应用
-# SpringBoot六大特性:
+## SpringBoot六大特性:
 <!-- more -->
 >
 
@@ -30,9 +30,13 @@ categories: ["Spring"]
 - 提供运维(Production-Ready)特性，可用于生产的特性，如度量标准、健康状况检查和外部化配置；
 - 完全不需要代码生成，也不需要XML配置；
 
+
+----------
 *现在我们先讲讲这六大特性之一的独立的Spring应用*
-# 理解独立的Spring应用
-## 创建独立的Spring应用作为SpringBoot的首要特性，其中有两层含义思考。
+
+
+## 理解独立的Spring应用
+### 创建独立的Spring应用作为SpringBoot的首要特性，其中有两层含义思考。
 - 首先，为什么要独立的应用？
 - 其次，为什么是Spring应用，而非SpringBoot应用？
 ### 在大多数SpringBoot应用场景中，程序直接或间接地使用SpringApplicationAPI引导应用。其中又结合嵌入式Web容器，对外提供HTTP服务。从应用类型上划分SpringBoot应用包括Web应用和非Web应用。
