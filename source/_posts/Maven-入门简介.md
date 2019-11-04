@@ -78,12 +78,12 @@ maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST
 ### 安装maven之前，必须先确保你的机器中已经安装了JDK。maven3.3+版本需要jdkj.7+以上的支持
 - 1．解压压缩包（以apache-maven-3.3.9-bin.zip为例）
 - 2．添加环境变量MAVEN_HOME，值为apache-maven-3.3.9的安装路径
-   - ![](http://abtjlwxj.cn-bj.ufileos.com/maven2.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=RXh0xfYuDAl9peXmdUj2Mmh4WvI%3D&Expires=1572838738)
+   - ![](http://abtjlwxj.cn-bj.ufileos.com/maven2.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=n1QmJWwGPL%2BAmJ2fAOYTQOwtW5Q%3D&Expires=1572840853)
 - 3．在Path环境变量的变量值末尾添加%MAVEN_HOME%\bin
-- 4．在cmd输入mvn –version，如果出现maven的版本信息，说明配置成功。![](http://abtjlwxj.cn-bj.ufileos.com/maven.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=QFUE7SEFohYcmSkWTN8XAlSFSXA%3D&Expires=1572838706)
+- 4．在cmd输入mvn –version，如果出现maven的版本信息，说明配置成功。![](http://abtjlwxj.cn-bj.ufileos.com/maven.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=gHV7hga2RboVjEa%2BOxqCN8rYAXM%3D&Expires=1572840955)
 ## 本地仓储配置
 ### 从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting.xml文件。可以参照下图配置本地仓储位置。
-![](http://abtjlwxj.cn-bj.ufileos.com/maven3.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=zNY5KiGOLrVOMH%2B7bQ9N%2BVbhmS4%3D&Expires=1572838825)
+![](http://abtjlwxj.cn-bj.ufileos.com/maven3.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=T9XDrrs%2BmFAdt0e5GryKjBf2aRA%3D&Expires=1572840971)
 # 第一个Maven工程
 ## 在Eclipse中创建Maven工程
 ## Maven插件
