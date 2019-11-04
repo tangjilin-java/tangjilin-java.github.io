@@ -7,6 +7,7 @@ categories: ["Spring"]
 ---
 # SpringBoot六大特性之独立的Spring应用
 # SpringBoot六大特性:
+<!-- more -->
 >
 
     Create stand-alone Spring applications
