@@ -22,7 +22,7 @@ categories: ["Spring"]
 
     Absolutely no code generation and no requirement for XML configuration
 
-##可以将其逐一理解为：
+## 可以将其逐一理解为：
 - 创建独立的Spring应用；
 - 直接嵌入Tomcat，Jetty或Undertow等Web容器(不需要部署WAR文件)；
 - 提供固化的"starter"依赖，简化构建配置；
