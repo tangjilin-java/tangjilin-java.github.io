@@ -78,12 +78,12 @@ maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST
 ### 安装maven之前，必须先确保你的机器中已经安装了JDK。maven3.3+版本需要jdkj.7+以上的支持
 - 1．解压压缩包（以apache-maven-3.3.9-bin.zip为例）
 - 2．添加环境变量MAVEN_HOME，值为apache-maven-3.3.9的安装路径
-   - ![](http://abtjlwxj.cn-bj.ufileos.com/maven2.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=n1QmJWwGPL%2BAmJ2fAOYTQOwtW5Q%3D&Expires=1572840853)
+![](/images/Maven/maven2.png)
 - 3．在Path环境变量的变量值末尾添加%MAVEN_HOME%\bin
-- 4．在cmd输入mvn –version，如果出现maven的版本信息，说明配置成功。![](http://abtjlwxj.cn-bj.ufileos.com/maven.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=gHV7hga2RboVjEa%2BOxqCN8rYAXM%3D&Expires=1572840955)
+- 4．在cmd输入mvn –version，如果出现maven的版本信息，说明配置成功。![](/images/Maven/maven.png)
 ## 本地仓储配置
 ### 从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting.xml文件。可以参照下图配置本地仓储位置。
-![](http://abtjlwxj.cn-bj.ufileos.com/maven3.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=T9XDrrs%2BmFAdt0e5GryKjBf2aRA%3D&Expires=1572840971)
+![](/images/Maven/maven3.png)
 # 第一个Maven工程
 ## 在Eclipse中创建Maven工程
 ## Maven插件
@@ -94,13 +94,12 @@ maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST
 ## Maven环境配置
 >点击Window -> Preferences
 如下图所示，配置settings.xml文件的位置
- ![](http://abtjlwxj.cn-bj.ufileos.com/maven5.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=HFGY5bWA22KNdSvJ%2BrHBCEx%2FZ0E%3D&Expires=1572839008)
+![](/images/Maven/maven5.png)
  
 ## 创建Maven工程
 >File -> New -> Maven Project -> Next，在接下来的窗口中会看到一大堆的项目模板，选择合适的模板。
 接下来设置项目的参数，如下：
- ![](http://abtjlwxj.cn-bj.ufileos.com/maven6.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=HwAb1Cxeg4oCuVnJPFiG1jBeTac%3D&Expires=1572839050)
- 
+![](/images/Maven/maven6.png)
 - groupId是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。
 - artifactId就是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。
 点击Finish，Eclipse会创建一个Maven工程。
@@ -108,15 +107,15 @@ maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST
 ## 使用Maven进行构建
 ### Eclipse中构建方式
 - 在Elipse项目上右击 -> Run As 就能看到很多Maven操作。这些操作和maven命令是等效的。例如Maven clean，等同于mvn clean命令。
- ![](http://abtjlwxj.cn-bj.ufileos.com/maven7.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=v0ON5qDk1prFMosBFpBHWCqasUE%3D&Expires=1572839150)
+![](/images/Maven/maven7.png)
 - 你也可以点击Maven build，输入组合命令，并保存下来。如下图：
- ![](http://abtjlwxj.cn-bj.ufileos.com/maven14.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=AQA5NjiKm790jiteGpe5rm2ORuw%3D&Expires=1572839280)
+ ![](/images/Maven/maven14.png)
  
 ### Maven命令构建方式
 >当然，你也可以直接使用maven命令进行构建。
 进入工程所在目录，输入maven命令就可以了。
 如下图
-![](http://abtjlwxj.cn-bj.ufileos.com/maven8.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=eqoyFEYZpXebrxNzrCV91Fa49H4%3D&Expires=1572839318)
+![](/images/Maven/maven8.png)
  
 # 使用指导
 ## 如何添加外部依赖jar包
@@ -265,11 +264,11 @@ maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST
 ## 如何一次编译多个工程
 ### 在Maven中，允许一个Maven Project中有多个Maven Module
 - 1.创建maven父工程步骤：new-->other-->选择maven project-->next-->勾选create a simple project-->next-->填写Group Id、Artifact Id、Version --> packaging选择pom-->finish。
- ![](http://abtjlwxj.cn-bj.ufileos.com/maven11.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=pUr8YzqjeOypbte59C%2F30aquAcA%3D&Expires=1572840431)
+![](/images/Maven/maven11.png)
 - 2.创建maven子工程步骤：选中刚才创建的父工程右键-->new-->other-->选择maven module-->next--勾选create a simple project-->填写module name（其实就是artifact id）-->next-->GAV继承父工程-->packaging选择你需要的-->finish。
- ![](http://abtjlwxj.cn-bj.ufileos.com/maven12.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=BvgnhxISICebc9QYnMpIhvXrkyc%3D&Expires=1572840459)
+![](/images/Maven/maven12.png)
 - 3.完成，刷新父工程；如有多个子工程，继续按照第二步骤创建。
-### ![](http://abtjlwxj.cn-bj.ufileos.com/maven13.png?UCloudPublicKey=th251gPXKZ2DgYoQrAOMdFdNMK-N3myVtSHJGtdL&Signature=geuZR2qOprA8e0V%2FE5pgZIapQ%2B4%3D&Expires=1572840476)
+### ![](/images/Maven/maven13.png)
 ### 这时打开XXX中的pom.xml可以看到其中有以下标签
 ><modules>
   <module>xxx1</module>
