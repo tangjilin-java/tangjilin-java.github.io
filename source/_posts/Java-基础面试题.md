@@ -29,7 +29,7 @@ categories: java
 ### private只有在本类中才能访问；
 ### public在任何地方都能访问；
 ### protected在同包内的类及包外的子类能访问；默认不写在同包内能访问。
-## 6是否可以继承String类
+## 6.是否可以继承String类
 >**String类是final类故不可以继承，一切由final修饰过的都不能继承。**
 ## 7.String和StringBuffer、StringBuilder的区别
 ### 可变性:  String类中使用字符数组保存字符串，privatefinal char value[]，所以string对象是不可变的。StringBuilder与StringBuffer都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，char[]value，这两种对象都是可变的。
