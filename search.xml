@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Ubuntu使用NAT模式固定ip并联网</title>
+    <url>/2020/03/19/Ubuntu%E4%BD%BF%E7%94%A8NAT%E6%A8%A1%E5%BC%8F%E5%9B%BA%E5%AE%9Aip%E5%B9%B6%E8%81%94%E7%BD%91/</url>
+    <content><![CDATA[<h1 id="Ubuntu使用NAT模式固定ip并联网"><a href="#Ubuntu使用NAT模式固定ip并联网" class="headerlink" title="Ubuntu使用NAT模式固定ip并联网"></a>Ubuntu使用NAT模式固定ip并联网</h1><h2 id="1-打开虚拟机，左上角依次打开编辑–-gt-虚拟网络编辑器，如图："><a href="#1-打开虚拟机，左上角依次打开编辑–-gt-虚拟网络编辑器，如图：" class="headerlink" title="1.打开虚拟机，左上角依次打开编辑–&gt;虚拟网络编辑器，如图："></a>1.打开虚拟机，左上角依次打开编辑–&gt;虚拟网络编辑器，如图：</h2><p><img src="/images/Ubuntu/1.png" alt></p>
+<h2 id="2-点击更改设置，它会重新启动，选中VMnet8，可以设置自己的子网网段：，例如，我自己设置的是：192-168-112-0"><a href="#2-点击更改设置，它会重新启动，选中VMnet8，可以设置自己的子网网段：，例如，我自己设置的是：192-168-112-0" class="headerlink" title="2.点击更改设置，它会重新启动，选中VMnet8，可以设置自己的子网网段：，例如，我自己设置的是：192.168.112.0"></a>2.点击更改设置，它会重新启动，选中VMnet8，可以设置自己的子网网段：，例如，我自己设置的是：192.168.112.0</h2><p><img src="/images/Ubuntu/2.png" alt><br>##然后在NAT设置中设置自己的网关ip：<br><img src="/images/Ubuntu/3.png" alt></p>
+<blockquote>
+<p>值得注意的是：你的本地网络配置里需要对VMnet8进行网络共享：<br><img src="/images/Ubuntu/7.png" alt></p>
+</blockquote>
+<h2 id="3-打开虚拟机，输入命令：sudo-vi-etc-network-interfaces："><a href="#3-打开虚拟机，输入命令：sudo-vi-etc-network-interfaces：" class="headerlink" title="3.打开虚拟机，输入命令：sudo vi /etc/network/interfaces："></a>3.打开虚拟机，输入命令：sudo vi /etc/network/interfaces：</h2><p><img src="/images/Ubuntu/4.png" alt></p>
+<h2 id="4-不放心的可以reboot一下就可以了："><a href="#4-不放心的可以reboot一下就可以了：" class="headerlink" title="4.不放心的可以reboot一下就可以了："></a>4.不放心的可以reboot一下就可以了：</h2><p><img src="/images/Ubuntu/5.png" alt><br><img src="/images/Ubuntu/6.png" alt></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>运维</tag>
+        <tag>ip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ELK在Windows下的安装部署以及IK分词器的安装</title>
+    <url>/2020/02/26/ELK%E5%9C%A8Windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BB%A5%E5%8F%8AIK%E5%88%86%E8%AF%8D%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="ELK在Windows下的安装部署以及IK分词器的安装"><a href="#ELK在Windows下的安装部署以及IK分词器的安装" class="headerlink" title="ELK在Windows下的安装部署以及IK分词器的安装"></a>ELK在Windows下的安装部署以及IK分词器的安装</h1>]]></content>
+      <categories>
+        <category>ELK</category>
+      </categories>
+      <tags>
+        <tag>ELK</tag>
+        <tag>ELK FOR WINDOWS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 基础面试题(一)</title>
+    <url>/2019/11/12/Java-%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Java面试题汇总-1-10"><a href="#Java面试题汇总-1-10" class="headerlink" title="Java面试题汇总(1-10)"></a>Java面试题汇总(1-10)</h1><h2 id="1-面向对象和面向过程的区别"><a href="#1-面向对象和面向过程的区别" class="headerlink" title="1.面向对象和面向过程的区别"></a>1.面向对象和面向过程的区别</h2><h3 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h3><h4 id="优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源-比如单片机、嵌入式开发、Linux-Unix等一般采用面向过程开发，性能是最重要的因素。"><a href="#优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源-比如单片机、嵌入式开发、Linux-Unix等一般采用面向过程开发，性能是最重要的因素。" class="headerlink" title="优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源;比如单片机、嵌入式开发、Linux/Unix等一般采用面向过程开发，性能是最重要的因素。"></a>优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源;比如单片机、嵌入式开发、Linux/Unix等一般采用面向过程开发，性能是最重要的因素。</h4><h4 id="缺点：没有面向对象易维护、易复用、易扩展"><a href="#缺点：没有面向对象易维护、易复用、易扩展" class="headerlink" title="缺点：没有面向对象易维护、易复用、易扩展"></a>缺点：没有面向对象易维护、易复用、易扩展</h4><h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><a id="more"></a>
+<h4 id="优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更加灵活、更加易于维护"><a href="#优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更加灵活、更加易于维护" class="headerlink" title="优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更加灵活、更加易于维护"></a>优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更加灵活、更加易于维护</h4><h4 id="缺点：性能比面向过程低"><a href="#缺点：性能比面向过程低" class="headerlink" title="缺点：性能比面向过程低"></a>缺点：性能比面向过程低</h4><h2 id="2-Java的四个基本特性（抽象、封装、继承，多态）"><a href="#2-Java的四个基本特性（抽象、封装、继承，多态）" class="headerlink" title="2.Java的四个基本特性（抽象、封装、继承，多态）"></a>2.Java的四个基本特性（抽象、封装、继承，多态）</h2><h3 id="抽象：就是把现实生活中的某一类东西提取出来，用程序代码表示，我们通常叫做类或者接口。"><a href="#抽象：就是把现实生活中的某一类东西提取出来，用程序代码表示，我们通常叫做类或者接口。" class="headerlink" title="抽象：就是把现实生活中的某一类东西提取出来，用程序代码表示，我们通常叫做类或者接口。"></a>抽象：就是把现实生活中的某一类东西提取出来，用程序代码表示，我们通常叫做类或者接口。</h3><blockquote>
+<p><strong>抽象包括两个方面： 一个是数据抽象，一个是过程抽象。数据抽象也就是对象的属性。过程抽象是对象的行为特征。</strong></p>
+</blockquote>
+<h3 id="封装：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行封装隐藏。封装分为属性的封装和方法的封装。"><a href="#封装：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行封装隐藏。封装分为属性的封装和方法的封装。" class="headerlink" title="封装：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行封装隐藏。封装分为属性的封装和方法的封装。"></a>封装：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行封装隐藏。封装分为属性的封装和方法的封装。</h3><h3 id="继承：是对有着共同特性的多类事物，进行再抽象成一个类。这个类就是多类事物的父类。父类的意义在于抽取多类事物的共性。"><a href="#继承：是对有着共同特性的多类事物，进行再抽象成一个类。这个类就是多类事物的父类。父类的意义在于抽取多类事物的共性。" class="headerlink" title="继承：是对有着共同特性的多类事物，进行再抽象成一个类。这个类就是多类事物的父类。父类的意义在于抽取多类事物的共性。"></a>继承：是对有着共同特性的多类事物，进行再抽象成一个类。这个类就是多类事物的父类。父类的意义在于抽取多类事物的共性。</h3><h3 id="多态：允许不同类的对象对同一消息做出响应。方法的重载、类的覆盖正体现了多态。"><a href="#多态：允许不同类的对象对同一消息做出响应。方法的重载、类的覆盖正体现了多态。" class="headerlink" title="多态：允许不同类的对象对同一消息做出响应。方法的重载、类的覆盖正体现了多态。"></a>多态：允许不同类的对象对同一消息做出响应。方法的重载、类的覆盖正体现了多态。</h3><h2 id="3-重载和重写的区别"><a href="#3-重载和重写的区别" class="headerlink" title="3.重载和重写的区别"></a>3.重载和重写的区别</h2><h3 id="重载：发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同，发生在编译时。"><a href="#重载：发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同，发生在编译时。" class="headerlink" title="重载：发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同，发生在编译时。"></a>重载：发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同，发生在编译时。</h3><h3 id="重写：发生在父子类中，方法名、参数列表必须相同，返回值小于等于父类，抛出的异常小于等于父类，访问修饰符大于等于父类；如果父类方法访问修饰符为private则子类中就不是重写。"><a href="#重写：发生在父子类中，方法名、参数列表必须相同，返回值小于等于父类，抛出的异常小于等于父类，访问修饰符大于等于父类；如果父类方法访问修饰符为private则子类中就不是重写。" class="headerlink" title="重写：发生在父子类中，方法名、参数列表必须相同，返回值小于等于父类，抛出的异常小于等于父类，访问修饰符大于等于父类；如果父类方法访问修饰符为private则子类中就不是重写。"></a>重写：发生在父子类中，方法名、参数列表必须相同，返回值小于等于父类，抛出的异常小于等于父类，访问修饰符大于等于父类；如果父类方法访问修饰符为private则子类中就不是重写。</h3><h2 id="4-构造器Constructor是否可被override构造器"><a href="#4-构造器Constructor是否可被override构造器" class="headerlink" title="4.构造器Constructor是否可被override构造器"></a>4.构造器Constructor是否可被override构造器</h2><blockquote>
+<p><strong>不能被重写，不能用static修饰构造器，只能用publicprivate protected这三个权限修饰符，且不能有返回语句。</strong></p>
+</blockquote>
+<h2 id="5-访问控制符public-protected-private-以及默认的区别"><a href="#5-访问控制符public-protected-private-以及默认的区别" class="headerlink" title="5.访问控制符public,protected,private,以及默认的区别"></a>5.访问控制符public,protected,private,以及默认的区别</h2><h3 id="private只有在本类中才能访问；"><a href="#private只有在本类中才能访问；" class="headerlink" title="private只有在本类中才能访问；"></a>private只有在本类中才能访问；</h3><h3 id="public在任何地方都能访问；"><a href="#public在任何地方都能访问；" class="headerlink" title="public在任何地方都能访问；"></a>public在任何地方都能访问；</h3><h3 id="protected在同包内的类及包外的子类能访问；默认不写在同包内能访问。"><a href="#protected在同包内的类及包外的子类能访问；默认不写在同包内能访问。" class="headerlink" title="protected在同包内的类及包外的子类能访问；默认不写在同包内能访问。"></a>protected在同包内的类及包外的子类能访问；默认不写在同包内能访问。</h3><h2 id="6-是否可以继承String类"><a href="#6-是否可以继承String类" class="headerlink" title="6.是否可以继承String类"></a>6.是否可以继承String类</h2><blockquote>
+<p><strong>String类是final类故不可以继承，一切由final修饰过的都不能继承。</strong></p>
+</blockquote>
+<h2 id="7-String和StringBuffer、StringBuilder的区别"><a href="#7-String和StringBuffer、StringBuilder的区别" class="headerlink" title="7.String和StringBuffer、StringBuilder的区别"></a>7.String和StringBuffer、StringBuilder的区别</h2><h3 id="可变性-String类中使用字符数组保存字符串，privatefinal-char-value-，所以string对象是不可变的。StringBuilder与StringBuffer都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，char-value，这两种对象都是可变的。"><a href="#可变性-String类中使用字符数组保存字符串，privatefinal-char-value-，所以string对象是不可变的。StringBuilder与StringBuffer都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，char-value，这两种对象都是可变的。" class="headerlink" title="可变性:  String类中使用字符数组保存字符串，privatefinal char value[]，所以string对象是不可变的。StringBuilder与StringBuffer都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，char[]value，这两种对象都是可变的。"></a>可变性:  String类中使用字符数组保存字符串，privatefinal char value[]，所以string对象是不可变的。StringBuilder与StringBuffer都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，char[]value，这两种对象都是可变的。</h3><h3 id="线程安全性-String中的对象是不可变的，也就可以理解为常量，线程安全。AbstractStringBuilder是StringBuilder与StringBuffer的公共父类，定义了一些字符串的基本操作，如expandCapacity、append、insert、indexOf等公共方法。StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder并没有对方法进行加同步锁，所以是非线程安全的。"><a href="#线程安全性-String中的对象是不可变的，也就可以理解为常量，线程安全。AbstractStringBuilder是StringBuilder与StringBuffer的公共父类，定义了一些字符串的基本操作，如expandCapacity、append、insert、indexOf等公共方法。StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder并没有对方法进行加同步锁，所以是非线程安全的。" class="headerlink" title="线程安全性:  String中的对象是不可变的，也就可以理解为常量，线程安全。AbstractStringBuilder是StringBuilder与StringBuffer的公共父类，定义了一些字符串的基本操作，如expandCapacity、append、insert、indexOf等公共方法。StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder并没有对方法进行加同步锁，所以是非线程安全的。"></a>线程安全性:  String中的对象是不可变的，也就可以理解为常量，线程安全。AbstractStringBuilder是StringBuilder与StringBuffer的公共父类，定义了一些字符串的基本操作，如expandCapacity、append、insert、indexOf等公共方法。StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder并没有对方法进行加同步锁，所以是非线程安全的。</h3><h2 id="性能-每次对String-类型进行改变的时候，都会生成一个新的String-对象，然后将指针指向新的String-对象。StringBuffer每次都会对StringBuffer-对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用StirngBuilder-相比使用StringBuffer-仅能获得10-15-左右的性能提升，但却要冒多线程不安全的风险。"><a href="#性能-每次对String-类型进行改变的时候，都会生成一个新的String-对象，然后将指针指向新的String-对象。StringBuffer每次都会对StringBuffer-对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用StirngBuilder-相比使用StringBuffer-仅能获得10-15-左右的性能提升，但却要冒多线程不安全的风险。" class="headerlink" title="性能:  每次对String 类型进行改变的时候，都会生成一个新的String 对象，然后将指针指向新的String 对象。StringBuffer每次都会对StringBuffer 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用StirngBuilder 相比使用StringBuffer 仅能获得10%~15% 左右的性能提升，但却要冒多线程不安全的风险。"></a>性能:  每次对String 类型进行改变的时候，都会生成一个新的String 对象，然后将指针指向新的String 对象。StringBuffer每次都会对StringBuffer 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用StirngBuilder 相比使用StringBuffer 仅能获得10%~15% 左右的性能提升，但却要冒多线程不安全的风险。</h2><h2 id="8-hashCode和equals方法的关系"><a href="#8-hashCode和equals方法的关系" class="headerlink" title="8.hashCode和equals方法的关系"></a>8.hashCode和equals方法的关系</h2><blockquote>
+<p><strong>equals相等，hashcode必相等；hashcode相等，equals可能不相等。</strong></p>
+</blockquote>
+<h2 id="9-抽象类和接口的区别"><a href="#9-抽象类和接口的区别" class="headerlink" title="9.抽象类和接口的区别"></a>9.抽象类和接口的区别</h2><h3 id="语法层次-抽象类和接口分别给出了不同的语法定义。"><a href="#语法层次-抽象类和接口分别给出了不同的语法定义。" class="headerlink" title="语法层次: 抽象类和接口分别给出了不同的语法定义。"></a>语法层次: 抽象类和接口分别给出了不同的语法定义。</h3><h3 id="设计层次-抽象层次不同，抽象类是对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。抽象类是自底向上抽象而来的，接口是自顶向下设计出来的。"><a href="#设计层次-抽象层次不同，抽象类是对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。抽象类是自底向上抽象而来的，接口是自顶向下设计出来的。" class="headerlink" title="设计层次: 抽象层次不同，抽象类是对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。抽象类是自底向上抽象而来的，接口是自顶向下设计出来的。"></a>设计层次: 抽象层次不同，抽象类是对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。抽象类是自底向上抽象而来的，接口是自顶向下设计出来的。</h3><h3 id="跨域不同-抽象类所体现的是一种继承关系，要想使得继承关系合理，父类和派生类之间必须存在”is-a”关系，即父类和派生类在概念本质上应该是相同的。对于接口则不然，并不要求接口的实现者和接口定义在概念本质上是一致的，仅仅是实现了接口定义的契约而已，”like-a”的关系。"><a href="#跨域不同-抽象类所体现的是一种继承关系，要想使得继承关系合理，父类和派生类之间必须存在”is-a”关系，即父类和派生类在概念本质上应该是相同的。对于接口则不然，并不要求接口的实现者和接口定义在概念本质上是一致的，仅仅是实现了接口定义的契约而已，”like-a”的关系。" class="headerlink" title="跨域不同: 抽象类所体现的是一种继承关系，要想使得继承关系合理，父类和派生类之间必须存在”is-a”关系，即父类和派生类在概念本质上应该是相同的。对于接口则不然，并不要求接口的实现者和接口定义在概念本质上是一致的，仅仅是实现了接口定义的契约而已，”like-a”的关系。"></a>跨域不同: 抽象类所体现的是一种继承关系，要想使得继承关系合理，父类和派生类之间必须存在”is-a”关系，即父类和派生类在概念本质上应该是相同的。对于接口则不然，并不要求接口的实现者和接口定义在概念本质上是一致的，仅仅是实现了接口定义的契约而已，”like-a”的关系。</h3><h2 id="10-自动装箱与拆箱装箱："><a href="#10-自动装箱与拆箱装箱：" class="headerlink" title="10.自动装箱与拆箱装箱："></a>10.自动装箱与拆箱装箱：</h2><h3 id="装箱：将基本类型用它们对应的引用类型包装起来；"><a href="#装箱：将基本类型用它们对应的引用类型包装起来；" class="headerlink" title="装箱：将基本类型用它们对应的引用类型包装起来；"></a>装箱：将基本类型用它们对应的引用类型包装起来；</h3><h3 id="拆箱：将包装类型转换为基本数据类型；"><a href="#拆箱：将包装类型转换为基本数据类型；" class="headerlink" title="拆箱：将包装类型转换为基本数据类型；"></a>拆箱：将包装类型转换为基本数据类型；</h3><blockquote>
+<p><strong>Java使用自动装箱和拆箱机制，节省了常用数值的内存开销和创建对象的开销，提高了效率，由编译器来完成，编译器会在编译期根据语法决定是否进行装箱和拆箱动作。</strong></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>面试</tag>
+        <tag>题库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows Server R2 的配置及部署SSM项目</title>
+    <url>/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="Windows-Server-R2-配置准备"><a href="#Windows-Server-R2-配置准备" class="headerlink" title="Windows Server R2 配置准备"></a>Windows Server R2 配置准备</h1><p><strong>要想配置一个Windows Server R2，首先你得去购买一个Windows Server R2服务器</strong></p>
+<blockquote>
+<p>学生购买链接：<br><a href="https://www.qcloud.com/act/campus" target="_blank" rel="noopener" title="腾讯云学生优惠云主机">https://www.qcloud.com/act/campus</a></p>
+</blockquote>
+<p><strong>买好主机之后登录控制台</strong></p>
+<a id="more"></a>
+<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/1.jpg" class title="This is an example image">
+
+<p><strong>点击云主机进行相关操作：获取用户名和密码以便用本地远程连接到云主机</strong></p>
+<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/2.jpg" class title="This is an example image">
+
+<p><strong>使用本地远程连接连接到云主机Windows Server R2</strong></p>
+<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/3.jpg" class title="This is an example image">
+
+<p><strong>输入用户名和密码即可连接成功</strong></p>
+<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/4.jpg" class title="This is an example image">
+<h2 id="使用工具："><a href="#使用工具：" class="headerlink" title="使用工具："></a>使用工具：</h2><ul>
+<li>腾讯云主机windows 2012 r2标准版</li>
+<li>JDK 1.8</li>
+<li>Tomcat 9.0</li>
+<li>Mysql 5.5</li>
+<li>SQL yog<h2 id="搭建环境前提："><a href="#搭建环境前提：" class="headerlink" title="搭建环境前提："></a>搭建环境前提：</h2></li>
+<li>会配置jdk环境变量(不会的点这里<a href="https://www.jianshu.com/p/6f30ce3f92e9" target="_blank" rel="noopener">https://www.jianshu.com/p/6f30ce3f92e9</a>)</li>
+<li>会配置tomcat环境变量(不会的点这里<a href="https://www.cnblogs.com/badboys/p/7659029.html" target="_blank" rel="noopener">https://www.cnblogs.com/badboys/p/7659029.html</a>)</li>
+<li>会安装与配置Mysql环境(不会的点这里<a href="https://www.cnblogs.com/LXSHYZHX/p/7043902.html?utm_source=itdadao&utm_medium=referral" target="_blank" rel="noopener">https://www.cnblogs.com/LXSHYZHX/p/7043902.html?utm_source=itdadao&amp;utm_medium=referral</a>)</li>
+<li>已经能写java web项目（jsp或servlet）或SSM项目</li>
+<li>对tomcat目录的作用有所了解、对xml文档的编写有所了解</li>
+<li>会在腾讯云解析自己的域名（最好会，不会也没问题）<blockquote>
+<p>以上操作与在Windows 10 上配置基本一致</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="测试配置"><a href="#测试配置" class="headerlink" title="测试配置"></a>测试配置</h1><ul>
+<li>远程连接到windows 2012 r2版本云主机！</li>
+<li>假设你已经解析好自己的域名了！</li>
+<li>假设你安装并配置好了jdk和tomcat的环境变量（在浏览器下输入localhost:8080 能看到猫！）<h1 id="部署SSM"><a href="#部署SSM" class="headerlink" title="部署SSM"></a>部署SSM</h1></li>
+<li>修改目录：C:\apache-tomcat-9.0.21\conf 下的server.xml ，将图中原来的8080改为现在的80（千万要找对！）如图：<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/7.jpg" class title="This is an example image"></li>
+<li>把一个写好的java项目打成xxx.war包放到云主机里的tomcat目录下：C:\apache-tomcat-9.0.21\webapps，如图：<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/5.jpg" class title="This is an example image"></li>
+<li>打开C:\apache-tomcat-9.0.21\bin目录点击startup.bat，如图：<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/6.jpg" class title="This is an example image"></li>
+<li>打开浏览器输入你的主机ip加项目名(如果自己将自己的ip解析了的就用自己解析的网址查看),如图：<img src="/2019/11/11/Windows-Server-R2-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%8A%E9%83%A8%E7%BD%B2SSM%E9%A1%B9%E7%9B%AE/8.jpg" class title="This is an example image"></li>
+</ul>
+<p><em>到此为止Windows Server R2的配置与部署就说完了，有什么补充的可以在文章下方留言</em></p>
+<ul>
+<li>2019/11/11 15:29:03 </li>
+</ul>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>Server</tag>
+        <tag>部署</tag>
+        <tag>SSM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringBoot六大特性之独立的Spring应用</title>
+    <url>/2019/11/04/SpringBoot%E5%85%AD%E5%A4%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E7%8B%AC%E7%AB%8B%E7%9A%84Spring%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="SpringBoot六大特性之独立的Spring应用"><a href="#SpringBoot六大特性之独立的Spring应用" class="headerlink" title="SpringBoot六大特性之独立的Spring应用"></a>SpringBoot六大特性之独立的Spring应用</h1><h2 id="SpringBoot六大特性"><a href="#SpringBoot六大特性" class="headerlink" title="SpringBoot六大特性:"></a>SpringBoot六大特性:</h2><a id="more"></a>
+<blockquote>
+</blockquote>
+<pre><code>Create stand-alone Spring applications
+
+Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)
+
+Provide opinionated &apos;starter&apos; dependencies to simplify your build configuration
+
+Automatically configure Spring and 3rd party libraries whenever possible
+
+Provide production-ready features such as metrics, health checks and externalized configuration
+
+Absolutely no code generation and no requirement for XML configuration</code></pre><h2 id="可以将其逐一理解为："><a href="#可以将其逐一理解为：" class="headerlink" title="可以将其逐一理解为："></a>可以将其逐一理解为：</h2><ul>
+<li>创建独立的Spring应用；</li>
+<li>直接嵌入Tomcat，Jetty或Undertow等Web容器(不需要部署WAR文件)；</li>
+<li>提供固化的”starter”依赖，简化构建配置；</li>
+<li>尽可能自动配置Spring和第三方库；</li>
+<li>提供运维(Production-Ready)特性，可用于生产的特性，如度量标准、健康状况检查和外部化配置；</li>
+<li>完全不需要代码生成，也不需要XML配置；</li>
+</ul>
+<hr>
+<p><em>现在我们先讲讲这六大特性之一的独立的Spring应用</em></p>
+<h2 id="理解独立的Spring应用"><a href="#理解独立的Spring应用" class="headerlink" title="理解独立的Spring应用"></a>理解独立的Spring应用</h2><h3 id="创建独立的Spring应用作为SpringBoot的首要特性，其中有两层含义思考。"><a href="#创建独立的Spring应用作为SpringBoot的首要特性，其中有两层含义思考。" class="headerlink" title="创建独立的Spring应用作为SpringBoot的首要特性，其中有两层含义思考。"></a>创建独立的Spring应用作为SpringBoot的首要特性，其中有两层含义思考。</h3><ul>
+<li>首先，为什么要独立的应用？</li>
+<li>其次，为什么是Spring应用，而非SpringBoot应用？<h3 id="在大多数SpringBoot应用场景中，程序直接或间接地使用SpringApplicationAPI引导应用。其中又结合嵌入式Web容器，对外提供HTTP服务。从应用类型上划分SpringBoot应用包括Web应用和非Web应用。"><a href="#在大多数SpringBoot应用场景中，程序直接或间接地使用SpringApplicationAPI引导应用。其中又结合嵌入式Web容器，对外提供HTTP服务。从应用类型上划分SpringBoot应用包括Web应用和非Web应用。" class="headerlink" title="在大多数SpringBoot应用场景中，程序直接或间接地使用SpringApplicationAPI引导应用。其中又结合嵌入式Web容器，对外提供HTTP服务。从应用类型上划分SpringBoot应用包括Web应用和非Web应用。"></a>在大多数SpringBoot应用场景中，程序直接或间接地使用SpringApplicationAPI引导应用。其中又结合嵌入式Web容器，对外提供HTTP服务。从应用类型上划分SpringBoot应用包括Web应用和非Web应用。</h3></li>
+<li>而非Web应用主要应用于服务提供，调度任务，消息处理等场景。</li>
+<li>Web应用类型在SpringBoot1.x中有且仅有Servlet容器实现，包括传统的Servlet和Spring Web MVC。</li>
+</ul>
+<h3 id="光指定了应用类型还不够，还需要搭配SpringBoot-Starter技术，直接或者间接地引入相关的依赖，结合SpringBoot自动装配，再利用SpringBoot和Spring-Framework的生命周期，创建并启动嵌入式的Web容器，如："><a href="#光指定了应用类型还不够，还需要搭配SpringBoot-Starter技术，直接或者间接地引入相关的依赖，结合SpringBoot自动装配，再利用SpringBoot和Spring-Framework的生命周期，创建并启动嵌入式的Web容器，如：" class="headerlink" title="光指定了应用类型还不够，还需要搭配SpringBoot Starter技术，直接或者间接地引入相关的依赖，结合SpringBoot自动装配，再利用SpringBoot和Spring Framework的生命周期，创建并启动嵌入式的Web容器，如："></a>光指定了应用类型还不够，还需要搭配SpringBoot Starter技术，直接或者间接地引入相关的依赖，结合SpringBoot自动装配，再利用SpringBoot和Spring Framework的生命周期，创建并启动嵌入式的Web容器，如：</h3><blockquote>
+<p>Servlet Web 的Maven依赖为org.springframework.boot:spring-boot-starter-web,而Reactive Web则需依赖org.springframework.boot:spring-boot-starter-webflux。换言之，SpringBoot应用无须再像传统的JavaEE应用那样，将应用打包成WAR文件或者EAR文件，并部署到JavaEE容器中运行。不过，SpringBoot也支持传统的Web部署方式，但是这样的部署方式是一种兼容的或者过渡的手段，并非独立的Spring应用。</p>
+</blockquote>
+<p><strong>总而言之，SpringBoot应用采用嵌入式容器，独立于外部容器，对应用生命周期拥有完全自主的控制，从此改变了”寄人篱下”的境地</strong></p>
+<blockquote>
+<p>不少人存在一个理解上的误区：认为SpringBoot嵌入式Web容器启动时间少于传统的Servlet容器，实际上并没有这样的证据证明这个。而应该将其理解为是一种方便快捷的启动方式，可以提供开发和部署的效率。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Maven 入门简介</title>
+    <url>/2019/11/04/Maven%E5%85%A5%E9%97%A8%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h1 id="Maven入门简介："><a href="#Maven入门简介：" class="headerlink" title="Maven入门简介："></a>Maven入门简介：</h1><h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="Maven是什么"><a href="#Maven是什么" class="headerlink" title="Maven是什么"></a>Maven是什么</h2><h3 id="Maven-是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。"><a href="#Maven-是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。" class="headerlink" title="Maven 是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。"></a>Maven 是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。</h3><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><h3 id="maven有自己的版本定义和规则"><a href="#maven有自己的版本定义和规则" class="headerlink" title="maven有自己的版本定义和规则"></a>maven有自己的版本定义和规则</h3><a id="more"></a>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><h3 id="maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。"><a href="#maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。" class="headerlink" title="maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。"></a>maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。</h3><h2 id="输出物管理"><a href="#输出物管理" class="headerlink" title="输出物管理"></a>输出物管理</h2><h3 id="maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为"><a href="#maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为" class="headerlink" title="maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为"></a>maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为</h3><h2 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h2><h3 id="maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为"><a href="#maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为" class="headerlink" title="maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为"></a>maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为</h3><h2 id="文档和构建结果"><a href="#文档和构建结果" class="headerlink" title="文档和构建结果"></a>文档和构建结果</h2><h3 id="maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。"><a href="#maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。" class="headerlink" title="maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。"></a>maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。</h3><h2 id="项目关系"><a href="#项目关系" class="headerlink" title="项目关系"></a>项目关系</h2><h3 id="一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理"><a href="#一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理" class="headerlink" title="一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理"></a>一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理</h3><h2 id="移植性管理"><a href="#移植性管理" class="headerlink" title="移植性管理"></a>移植性管理</h2><h3 id="maven可以针对不同的开发场景，输出不同种类的输出结果"><a href="#maven可以针对不同的开发场景，输出不同种类的输出结果" class="headerlink" title="maven可以针对不同的开发场景，输出不同种类的输出结果"></a>maven可以针对不同的开发场景，输出不同种类的输出结果</h3><h2 id="Maven的好处"><a href="#Maven的好处" class="headerlink" title="Maven的好处"></a>Maven的好处</h2><ul>
+<li>节省磁盘空间</li>
+<li>可以一键构建</li>
+<li>可以跨平台</li>
+<li>应用在大型项目时可以提高开发效率<h2 id="Maven相似项目管理器"><a href="#Maven相似项目管理器" class="headerlink" title="Maven相似项目管理器"></a>Maven相似项目管理器</h2><h3 id="据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。"><a href="#据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。" class="headerlink" title="据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。"></a>据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。</h3><h2 id="Maven的生命周期"><a href="#Maven的生命周期" class="headerlink" title="Maven的生命周期"></a>Maven的生命周期</h2><h3 id="maven把项目的构建划分为不同的生命周期-lifecycle-。粗略一点的话，它这个过程-phase-包括：编译-Compile-、测试-Test-、打包-Package-、集成测试-Install-、验证-Clean-、部署-Deploy-。maven中所有的执行动作-goal-都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。"><a href="#maven把项目的构建划分为不同的生命周期-lifecycle-。粗略一点的话，它这个过程-phase-包括：编译-Compile-、测试-Test-、打包-Package-、集成测试-Install-、验证-Clean-、部署-Deploy-。maven中所有的执行动作-goal-都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。" class="headerlink" title="maven把项目的构建划分为不同的生命周期(lifecycle)。粗略一点的话，它这个过程(phase)包括：编译(Compile)、测试(Test)、打包(Package)、集成测试(Install)、验证(Clean)、部署(Deploy)。maven中所有的执行动作(goal)都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。"></a>maven把项目的构建划分为不同的生命周期(lifecycle)。粗略一点的话，它这个过程(phase)包括：编译(Compile)、测试(Test)、打包(Package)、集成测试(Install)、验证(Clean)、部署(Deploy)。maven中所有的执行动作(goal)都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。</h3><h2 id="Maven的标准工程结构"><a href="#Maven的标准工程结构" class="headerlink" title="Maven的标准工程结构"></a>Maven的标准工程结构</h2><h3 id="Maven的标准工程结构如下："><a href="#Maven的标准工程结构如下：" class="headerlink" title="Maven的标准工程结构如下："></a>Maven的标准工程结构如下：</h3><blockquote>
+</blockquote>
+|– pom.xml(maven的核心配置文件)<br>|– src<br>|– main<br>|   <code>-- java(java源代码目录)
+|</code>– resources(资源文件目录)<br>|– test<pre><code>`-- java(单元测试代码目录)</code></pre>|– target(输出目录，所有的输出物都存放在这个目录下)<br>  |–classes(编译后的class文件存放处)</li>
+</ul>
+<h2 id="Maven的”约定优于配置”"><a href="#Maven的”约定优于配置”" class="headerlink" title="Maven的”约定优于配置”"></a>Maven的”约定优于配置”</h2><h3 id="所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下："><a href="#所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下：" class="headerlink" title="所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下："></a>所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下：</h3><p><em>每一个阶段的任务都知道怎么正确完成自己的工作，比如compile任务就知道从src/main/java下编译所有的java文件，并把它的输出class文件存放到target/classes中。<br>对maven来说，采用”约定优于配置”的策略可以减少修改配置的工作量，也可以降低学习成本，更重要的是，给项目引入了统一的规范。</em></p>
+<h2 id="Maven的版本规范"><a href="#Maven的版本规范" class="headerlink" title="Maven的版本规范"></a>Maven的版本规范</h2><h3 id="maven使用如下几个要素来唯一定位某一个输出物："><a href="#maven使用如下几个要素来唯一定位某一个输出物：" class="headerlink" title="maven使用如下几个要素来唯一定位某一个输出物："></a>maven使用如下几个要素来唯一定位某一个输出物：</h3><ul>
+<li>groudId<br>团体、组织的标识符。团体标识的约定是，它以创建这个项目的组织名称的逆向域名(reverse domain name)开头。一般对应着JAVA的包的结构。例如org.apache</li>
+<li>artifactId<br>单独项目的唯一标识符。比如我们的tomcat, commons等。不要在artifactId中包含点号(.)。</li>
+<li>version<br>一个项目的特定版本。</li>
+<li>packaging<br>项目的类型，默认是jar，描述了项目打包后的输出。类型为jar的项目产生一个JAR文件，类型为war的项目产生一个web应用。maven有自己的版本规范，一般是如下定义 <major version>.<minor version>.<incremental version>-<qualifier> ，比如1.2.3-beta-01。要说明的是，maven自己判断版本的算法是major,minor,incremental部分用数字比较，qualifier部分用字符串比较，所以要小心 alpha-2和alpha-15的比较关系，最好用 alpha-02的格式。<br>maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST，RELEASE。比如”1.0-SNAPSHOT”。各个部分的含义和处理逻辑如下说明：</qualifier></incremental></minor></major></li>
+<li>SNAPSHOT<br>这个版本一般用于开发过程中，表示不稳定的版本。</li>
+<li>LATEST<br>指某个特定构件的最新发布，这个发布可能是一个发布版，也可能是一个snapshot版，具体看哪个时间最后。</li>
+<li>RELEASE<br>指最后一个发布版。</li>
+</ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="官网下载地址"><a href="#官网下载地址" class="headerlink" title="官网下载地址"></a>官网下载地址</h2><p><a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven官网下载地址</a></p>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><h3 id="安装maven之前，必须先确保你的机器中已经安装了JDK。maven3-3-版本需要jdkj-7-以上的支持"><a href="#安装maven之前，必须先确保你的机器中已经安装了JDK。maven3-3-版本需要jdkj-7-以上的支持" class="headerlink" title="安装maven之前，必须先确保你的机器中已经安装了JDK。maven3.3+版本需要jdkj.7+以上的支持"></a>安装maven之前，必须先确保你的机器中已经安装了JDK。maven3.3+版本需要jdkj.7+以上的支持</h3><ul>
+<li>1．解压压缩包（以apache-maven-3.3.9-bin.zip为例）</li>
+<li>2．添加环境变量MAVEN_HOME，值为apache-maven-3.3.9的安装路径<br><img src="/images/Maven/maven2.png" alt></li>
+<li>3．在Path环境变量的变量值末尾添加%MAVEN_HOME%\bin</li>
+<li>4．在cmd输入mvn –version，如果出现maven的版本信息，说明配置成功。<img src="/images/Maven/maven.png" alt><h2 id="本地仓储配置"><a href="#本地仓储配置" class="headerlink" title="本地仓储配置"></a>本地仓储配置</h2><h3 id="从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting-xml文件。可以参照下图配置本地仓储位置。"><a href="#从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting-xml文件。可以参照下图配置本地仓储位置。" class="headerlink" title="从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting.xml文件。可以参照下图配置本地仓储位置。"></a>从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting.xml文件。可以参照下图配置本地仓储位置。</h3><img src="/images/Maven/maven3.png" alt><h1 id="第一个Maven工程"><a href="#第一个Maven工程" class="headerlink" title="第一个Maven工程"></a>第一个Maven工程</h1><h2 id="在Eclipse中创建Maven工程"><a href="#在Eclipse中创建Maven工程" class="headerlink" title="在Eclipse中创建Maven工程"></a>在Eclipse中创建Maven工程</h2><h2 id="Maven插件"><a href="#Maven插件" class="headerlink" title="Maven插件"></a>Maven插件</h2><h2 id="在Eclipse中创建Maven工程，需要安装Maven插件。"><a href="#在Eclipse中创建Maven工程，需要安装Maven插件。" class="headerlink" title="在Eclipse中创建Maven工程，需要安装Maven插件。"></a>在Eclipse中创建Maven工程，需要安装Maven插件。</h2>###一般较新版本的Eclipse都会带有Maven插件，如果你的Eclipse中已经有Maven插件，可以跳过这一步骤。<blockquote>
+<p>点击Help -&gt; Eclipse Marketplace，搜索maven关键字，选择安装红框对应的Maven插件。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Maven环境配置"><a href="#Maven环境配置" class="headerlink" title="Maven环境配置"></a>Maven环境配置</h2><blockquote>
+<p>点击Window -&gt; Preferences<br>如下图所示，配置settings.xml文件的位置<br><img src="/images/Maven/maven5.png" alt></p>
+</blockquote>
+<h2 id="创建Maven工程"><a href="#创建Maven工程" class="headerlink" title="创建Maven工程"></a>创建Maven工程</h2><blockquote>
+<p>File -&gt; New -&gt; Maven Project -&gt; Next，在接下来的窗口中会看到一大堆的项目模板，选择合适的模板。<br>接下来设置项目的参数，如下：<br><img src="/images/Maven/maven6.png" alt></p>
+</blockquote>
+<ul>
+<li>groupId是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。</li>
+<li>artifactId就是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。<br>点击Finish，Eclipse会创建一个Maven工程。</li>
+</ul>
+<h2 id="使用Maven进行构建"><a href="#使用Maven进行构建" class="headerlink" title="使用Maven进行构建"></a>使用Maven进行构建</h2><h3 id="Eclipse中构建方式"><a href="#Eclipse中构建方式" class="headerlink" title="Eclipse中构建方式"></a>Eclipse中构建方式</h3><ul>
+<li>在Elipse项目上右击 -&gt; Run As 就能看到很多Maven操作。这些操作和maven命令是等效的。例如Maven clean，等同于mvn clean命令。<br><img src="/images/Maven/maven7.png" alt></li>
+<li>你也可以点击Maven build，输入组合命令，并保存下来。如下图：<br><img src="/images/Maven/maven14.png" alt></li>
+</ul>
+<h3 id="Maven命令构建方式"><a href="#Maven命令构建方式" class="headerlink" title="Maven命令构建方式"></a>Maven命令构建方式</h3><blockquote>
+<p>当然，你也可以直接使用maven命令进行构建。<br>进入工程所在目录，输入maven命令就可以了。<br>如下图<br><img src="/images/Maven/maven8.png" alt></p>
+</blockquote>
+<h1 id="使用指导"><a href="#使用指导" class="headerlink" title="使用指导"></a>使用指导</h1><h2 id="如何添加外部依赖jar包"><a href="#如何添加外部依赖jar包" class="headerlink" title="如何添加外部依赖jar包"></a>如何添加外部依赖jar包</h2><h3 id="在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。"><a href="#在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。" class="headerlink" title="在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。"></a>在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的<dependency>标签即可。</dependency></h3><h3 id="参考下例："><a href="#参考下例：" class="headerlink" title="参考下例："></a>参考下例：</h3><pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+        &lt;optional&gt;true&lt;/optional&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.squareup.okhttp3&lt;/groupId&gt;
+        &lt;artifactId&gt;okhttp&lt;/artifactId&gt;
+        &lt;version&gt;3.14.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+        &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+        &lt;version&gt;1.2.57&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+        &lt;artifactId&gt;h2&lt;/artifactId&gt;
+        &lt;version&gt;1.4.199&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;mysql&lt;/groupId&gt;
+        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+        &lt;version&gt;5.1.45&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+        &lt;version&gt;2.1.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+        &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+        &lt;version&gt;1.18.6&lt;/version&gt;
+        &lt;scope&gt;provided&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+        &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;
+        &lt;version&gt;3.9&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!--云储存--&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;cn.ucloud.ufile&lt;/groupId&gt;
+        &lt;artifactId&gt;ufile-client-java&lt;/artifactId&gt;
+        &lt;version&gt;2.1.2&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.flywaydb&lt;/groupId&gt;
+            &lt;artifactId&gt;flyway-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;5.2.4&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;url&gt;jdbc:mysql://localhost:3306/community&lt;/url&gt;
+                &lt;user&gt;root&lt;/user&gt;
+                &lt;password&gt;1234&lt;/password&gt;
+            &lt;/configuration&gt;
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;mysql&lt;/groupId&gt;
+                    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+                    &lt;version&gt;5.1.45&lt;/version&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
+        &lt;/plugin&gt;
+
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;1.3.7&lt;/version&gt;
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;mysql&lt;/groupId&gt;
+                    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+                    &lt;version&gt;5.1.45&lt;/version&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre><blockquote>
+<p><dependency>标签最常用的四个属性标签：</dependency></p>
+</blockquote>
+<ul>
+<li>groupId：项目组织唯一的标识符，实际对应JAVA的包的结构。</li>
+<li>artifactId：项目唯一的标识符，实际对应项目的名称，就是项目根目录的名称。</li>
+<li>version：jar包的版本号。可以直接填版本数字，也可以在properties标签中设置属性值。</li>
+<li>scope：jar包的作用范围。可以填写compile、runtime、test、system和provided。用来在编译、测试等场景下选择对应的classpath。<h2 id="Maven依赖范围"><a href="#Maven依赖范围" class="headerlink" title="Maven依赖范围"></a>Maven依赖范围</h2><blockquote>
+<p>Compile、Test、Runtime、Provided</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="如何寻找jar包"><a href="#如何寻找jar包" class="headerlink" title="如何寻找jar包"></a>如何寻找jar包</h2><h3 id="可以在Maven仓库地址站点搜寻你想要的jar包版本"><a href="#可以在Maven仓库地址站点搜寻你想要的jar包版本" class="headerlink" title="可以在Maven仓库地址站点搜寻你想要的jar包版本"></a>可以在<a href="http://mvnrepository.com/" target="_blank" rel="noopener">Maven仓库地址</a>站点搜寻你想要的jar包版本</h3><blockquote>
+<p>例如，想要使用log4j，可以找到需要的版本号，然后拷贝对应的maven标签信息，将其添加到pom .xml文件中。</p>
+</blockquote>
+<h2 id="如何使用Maven插件-Plugin"><a href="#如何使用Maven插件-Plugin" class="headerlink" title="如何使用Maven插件(Plugin)"></a>如何使用Maven插件(Plugin)</h2><h3 id="要添加Maven插件，可以在pom-xml文件中添加标签。"><a href="#要添加Maven插件，可以在pom-xml文件中添加标签。" class="headerlink" title="要添加Maven插件，可以在pom.xml文件中添加标签。"></a>要添加Maven插件，可以在pom.xml文件中添加<plugin>标签。</plugin></h3><pre><code>&lt;plugin&gt;
+  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+  &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+  &lt;version&gt;3.3&lt;/version&gt;
+  &lt;configuration&gt;
+    &lt;source&gt;1.7&lt;/source&gt;
+    &lt;target&gt;1.7&lt;/target&gt;
+  &lt;/configuration&gt;
+&lt;/plugin&gt;</code></pre><h3 id="标签用来配置插件的一些使用参数。"><a href="#标签用来配置插件的一些使用参数。" class="headerlink" title="标签用来配置插件的一些使用参数。"></a><configuration>标签用来配置插件的一些使用参数。</configuration></h3><h2 id="如何一次编译多个工程"><a href="#如何一次编译多个工程" class="headerlink" title="如何一次编译多个工程"></a>如何一次编译多个工程</h2><h3 id="在Maven中，允许一个Maven-Project中有多个Maven-Module"><a href="#在Maven中，允许一个Maven-Project中有多个Maven-Module" class="headerlink" title="在Maven中，允许一个Maven Project中有多个Maven Module"></a>在Maven中，允许一个Maven Project中有多个Maven Module</h3><ul>
+<li>1.创建maven父工程步骤：new–&gt;other–&gt;选择maven project–&gt;next–&gt;勾选create a simple project–&gt;next–&gt;填写Group Id、Artifact Id、Version –&gt; packaging选择pom–&gt;finish。<br><img src="/images/Maven/maven11.png" alt></li>
+<li>2.创建maven子工程步骤：选中刚才创建的父工程右键–&gt;new–&gt;other–&gt;选择maven module–&gt;next–勾选create a simple project–&gt;填写module name（其实就是artifact id）–&gt;next–&gt;GAV继承父工程–&gt;packaging选择你需要的–&gt;finish。<br><img src="/images/Maven/maven12.png" alt></li>
+<li>3.完成，刷新父工程；如有多个子工程，继续按照第二步骤创建。<h3 id><a href="#" class="headerlink" title></a><img src="/images/Maven/maven13.png" alt></h3><h3 id="这时打开XXX中的pom-xml可以看到其中有以下标签"><a href="#这时打开XXX中的pom-xml可以看到其中有以下标签" class="headerlink" title="这时打开XXX中的pom.xml可以看到其中有以下标签"></a>这时打开XXX中的pom.xml可以看到其中有以下标签</h3><blockquote>
+<modules>
+<module>xxx1</module>
+</modules>
+</blockquote>
+<h3 id="选择编译XXX时，会依次对它的所有Module执行相同操作。"><a href="#选择编译XXX时，会依次对它的所有Module执行相同操作。" class="headerlink" title="选择编译XXX时，会依次对它的所有Module执行相同操作。"></a>选择编译XXX时，会依次对它的所有Module执行相同操作。</h3></li>
+</ul>
+<h2 id="常用Maven插件"><a href="#常用Maven插件" class="headerlink" title="常用Maven插件"></a>常用Maven插件</h2><ul>
+<li><p>maven-antrun-plugin<br><a href="http://maven.apache.org/plugins/maven-antrun-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-antrun-plugin/</a><br>maven-antrun-plugin能让用户在Maven项目中运行Ant任务。用户可以直接在该插件的配置以Ant的方式编写Target，然后交给该插件的run目标去执行。在一些由Ant往Maven迁移的项目中，该插件尤其有用。此外当你发现需要编写一些自定义程度很高的任务，同时又觉得Maven不够灵活时，也可以以Ant的方式实现之。maven-antrun-plugin的run目标通常与生命周期绑定运行。</p>
+</li>
+<li><p>maven-archetype-plugin<br><a href="http://maven.apache.org/archetype/maven-archetype-plugin/" target="_blank" rel="noopener">http://maven.apache.org/archetype/maven-archetype-plugin/</a><br>Archtype指项目的骨架，Maven初学者最开始执行的Maven命令可能就是mvn archetype:generate，这实际上就是让maven-archetype-plugin生成一个很简单的项目骨架，帮助开发者快速上手。可能也有人看到一些文档写了mvn archetype:create，但实际上create目标已经被弃用了，取而代之的是generate目标，该目标使用交互式的方式提示用户输入必要的信息以创建项目，体验更好。 maven-archetype-plugin还有一些其他目标帮助用户自己定义项目原型，例如你由一个产品需要交付给很多客户进行二次开发，你就可以为他们提供一个Archtype，帮助他们快速上手。</p>
+</li>
+<li><p>maven-assembly-plugin<br><a href="http://maven.apache.org/plugins/maven-assembly-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-assembly-plugin/</a><br>maven-assembly-plugin的用途是制作项目分发包，该分发包可能包含了项目的可执行文件、源代码、readme、平台脚本等等。 maven-assembly-plugin支持各种主流的格式如zip、tar.gz、jar和war等，具体打包哪些文件是高度可控的，例如用户可以按文件级别的粒度、文件集级别的粒度、模块级别的粒度、以及依赖级别的粒度控制打包，此外，包含和排除配置也是支持的。maven-assembly- plugin要求用户使用一个名为assembly.xml的元数据文件来表述打包，它的single目标可以直接在命令行调用，也可以被绑定至生命周期。</p>
+</li>
+<li><p>maven-dependency-plugin<br><a href="http://maven.apache.org/plugins/maven-dependency-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-dependency-plugin/</a><br>maven-dependency-plugin最大的用途是帮助分析项目依赖，dependency:list能够列出项目最终解析到的依赖列表，dependency:tree能进一步的描绘项目依赖树，dependency:analyze可以告诉你项目依赖潜在的问题，如果你有直接使用到的却未声明的依赖，该目标就会发出警告。maven-dependency-plugin还有很多目标帮助你操作依赖文件，例如dependency:copy-dependencies能将项目依赖从本地Maven仓库复制到某个特定的文件夹下面。</p>
+</li>
+<li><p>maven-enforcer-plugin<br><a href="http://maven.apache.org/plugins/maven-enforcer-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-enforcer-plugin/</a><br>在一个稍大一点的组织或团队中，你无法保证所有成员都熟悉Maven，那他们做一些比较愚蠢的事情就会变得很正常，例如给项目引入了外部的 SNAPSHOT依赖而导致构建不稳定，使用了一个与大家不一致的Maven版本而经常抱怨构建出现诡异问题。maven-enforcer- plugin能够帮助你避免之类问题，它允许你创建一系列规则强制大家遵守，包括设定Java版本、设定Maven版本、禁止某些依赖、禁止 SNAPSHOT依赖。只要在一个父POM配置规则，然后让大家继承，当规则遭到破坏的时候，Maven就会报错。除了标准的规则之外，你还可以扩展该插件，编写自己的规则。maven-enforcer-plugin的enforce目标负责检查规则，它默认绑定到生命周期的validate阶段。</p>
+</li>
+<li><p>maven-help-plugin<br><a href="http://maven.apache.org/plugins/maven-help-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-help-plugin/</a><br>maven-help-plugin是一个小巧的辅助工具，最简单的help:system可以打印所有可用的环境变量和Java系统属性。help:effective-pom和help:effective-settings最为有用，它们分别打印项目的有效POM和有效settings，有效POM是指合并了所有父POM（包括Super POM）后的XML，当你不确定POM的某些信息从何而来时，就可以查看有效POM。有效settings同理，特别是当你发现自己配置的 settings.xml没有生效时，就可以用help:effective-settings来验证。此外，maven-help-plugin的describe目标可以帮助你描述任何一个Maven插件的信息，还有all-profiles目标和active-profiles目标帮助查看项目的Profile。</p>
+</li>
+<li><p>maven-release-plugin<br><a href="http://maven.apache.org/plugins/maven-release-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/</a><br>maven-release-plugin的用途是帮助自动化项目版本发布，它依赖于POM中的SCM信息。release:prepare用来准备版本发布，具体的工作包括检查是否有未提交代码、检查是否有SNAPSHOT依赖、升级项目的SNAPSHOT版本至RELEASE版本、为项目打标签等等。release:perform则是签出标签中的RELEASE源码，构建并发布。版本发布是非常琐碎的工作，它涉及了各种检查，而且由于该工作仅仅是偶尔需要，因此手动操作很容易遗漏一些细节，maven-release-plugin让该工作变得非常快速简便，不易出错。maven-release-plugin的各种目标通常直接在命令行调用，因为版本发布显然不是日常构建生命周期的一部分。</p>
+</li>
+<li><p>maven-resources-plugin<br><a href="http://maven.apache.org/plugins/maven-resources-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-resources-plugin/</a><br>为了使项目结构更为清晰，Maven区别对待Java代码文件和资源文件，maven-compiler-plugin用来编译Java代码，maven-resources-plugin则用来处理资源文件。默认的主资源文件目录是src/main/resources，很多用户会需要添加额外的资源文件目录，这个时候就可以通过配置maven-resources-plugin来实现。此外，资源文件过滤也是Maven的一大特性，你可以在资源文件中使用${propertyName}形式的Maven属性，然后配置maven-resources-plugin开启对资源文件的过滤，之后就可以针对不同环境通过命令行或者Profile传入属性的值，以实现更为灵活的构建。</p>
+</li>
+<li><p>maven-surefire-plugin<br><a href="http://maven.apache.org/plugins/maven-surefire-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-surefire-plugin/</a><br>可能是由于历史的原因，Maven 2/3中用于执行测试的插件不是maven-test-plugin，而是maven-surefire-plugin。其实大部分时间内，只要你的测试类遵循通用的命令约定（以Test结尾、以TestCase结尾、或者以Test开头），就几乎不用知晓该插件的存在。然而在当你想要跳过测试、排除某些测试类、或者使用一些TestNG特性的时候，了解maven-surefire-plugin的一些配置选项就很有用了。例如 mvn test -Dtest=FooTest 这样一条命令的效果是仅运行FooTest测试类，这是通过控制maven-surefire-plugin的test参数实现的。</p>
+</li>
+<li><p>build-helper-maven-plugin<br><a href="http://mojo.codehaus.org/build-helper-maven-plugin/" target="_blank" rel="noopener">http://mojo.codehaus.org/build-helper-maven-plugin/</a><br>Maven默认只允许指定一个主Java代码目录和一个测试Java代码目录，虽然这其实是个应当尽量遵守的约定，但偶尔你还是会希望能够指定多个源码目录（例如为了应对遗留项目），build-helper-maven-plugin的add-source目标就是服务于这个目的，通常它被绑定到默认生命周期的generate-sources阶段以添加额外的源码目录。需要强调的是，这种做法还是不推荐的，因为它破坏了 Maven的约定，而且可能会遇到其他严格遵守约定的插件工具无法正确识别额外的源码目录。<br>build-helper-maven-plugin的另一个非常有用的目标是attach-artifact，使用该目标你可以以classifier的形式选取部分项目文件生成附属构件，并同时install到本地仓库，也可以deploy到远程仓库。</p>
+</li>
+<li><p>exec-maven-plugin<br><a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank" rel="noopener">http://mojo.codehaus.org/exec-maven-plugin/</a><br>exec-maven-plugin很好理解，顾名思义，它能让你运行任何本地的系统程序，在某些特定情况下，运行一个Maven外部的程序可能就是最简单的问题解决方案，这就是exec:exec的用途，当然，该插件还允许你配置相关的程序运行参数。除了exec目标之外，exec-maven-plugin还提供了一个java目标，该目标要求你提供一个mainClass参数，然后它能够利用当前项目的依赖作为classpath，在同一个JVM中运行该mainClass。有时候，为了简单的演示一个命令行Java程序，你可以在POM中配置好exec-maven-plugin的相关运行参数，然后直接在命令运行mvn exec:java 以查看运行效果。</p>
+</li>
+<li><p>jetty-maven-plugin<br><a href="http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin" target="_blank" rel="noopener">http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin</a><br>在进行Web开发的时候，打开浏览器对应用进行手动的测试几乎是无法避免的，这种测试方法通常就是将项目打包成war文件，然后部署到Web容器中，再启动容器进行验证，这显然十分耗时。为了帮助开发者节省时间，jetty-maven-plugin应运而生，它完全兼容 Maven项目的目录结构，能够周期性地检查源文件，一旦发现变更后自动更新到内置的Jetty Web容器中。做一些基本配置后（例如Web应用的contextPath和自动扫描变更的时间间隔），你只要执行 mvn jetty:run ，然后在IDE中修改代码，代码经IDE自动编译后产生变更，再由jetty-maven-plugin侦测到后更新至Jetty容器，这时你就可以直接测试Web页面了。需要注意的是，jetty-maven-plugin并不是宿主于Apache或Codehaus的官方插件，因此使用的时候需要额外的配置settings.xml的pluginGroups元素，将org.mortbay.jetty这个pluginGroup加入。</p>
+</li>
+<li><p>versions-maven-plugin<br><a href="http://mojo.codehaus.org/versions-maven-plugin/" target="_blank" rel="noopener">http://mojo.codehaus.org/versions-maven-plugin/</a><br>很多Maven用户遇到过这样一个问题，当项目包含大量模块的时候，为他们集体更新版本就变成一件烦人的事情，到底有没有自动化工具能帮助完成这件事情呢？（当然你可以使用sed之类的文本操作工具，不过不在本文讨论范围）答案是肯定的，versions-maven- plugin提供了很多目标帮助你管理Maven项目的各种版本信息。例如最常用的，命令 mvn versions:set -DnewVersion=1.1-SNAPSHOT 就能帮助你把所有模块的版本更新到1.1-SNAPSHOT。该插件还提供了其他一些很有用的目标，display-dependency- updates能告诉你项目依赖有哪些可用的更新；类似的display-plugin-updates能告诉你可用的插件更新；然后use- latest-versions能自动帮你将所有依赖升级到最新版本。最后，如果你对所做的更改满意，则可以使用 mvn versions:commit 提交，不满意的话也可以使用 mvn versions:revert 进行撤销。</p>
+</li>
+</ul>
+<blockquote>
+<p>更多详情请参考<a href="https://maven.apache.org/plugins/" target="_blank" rel="noopener">https://maven.apache.org/plugins/</a></p>
+</blockquote>
+<h2 id="常用Maven命令"><a href="#常用Maven命令" class="headerlink" title="常用Maven命令"></a>常用Maven命令</h2><h3 id="生命周期-阶段描述"><a href="#生命周期-阶段描述" class="headerlink" title="生命周期    阶段描述"></a>生命周期    阶段描述</h3><ul>
+<li>mvn validate    验证项目是否正确，以及所有为了完整构建必要的信息是否可用</li>
+<li>mvn generate-sources    生成所有需要包含在编译过程中的源代码</li>
+<li>mvn process-sources    处理源代码，比如过滤一些值</li>
+<li>mvn generate-resources    生成所有需要包含在打包过程中的资源文件</li>
+<li>mvn process-resources    复制并处理资源文件至目标目录，准备打包</li>
+<li>mvn compile    编译项目的源代码</li>
+<li>mvn process-classes    后处理编译生成的文件，例如对Java类进行字节码增强（bytecode enhancement）</li>
+<li>mvn generate-test-sources    生成所有包含在测试编译过程中的测试源码</li>
+<li>mvn process-test-sources    处理测试源码，比如过滤一些值</li>
+<li>mvn generate-test-resources    生成测试需要的资源文件</li>
+<li>mvn process-test-resources    复制并处理测试资源文件至测试目标目录</li>
+<li>mvn test-compile    编译测试源码至测试目标目录</li>
+<li>mvn test    使用合适的单元测试框架运行测试。这些测试应该不需要代码被打包或发布</li>
+<li>mvn prepare-package    在真正的打包之前，执行一些准备打包必要的操作。这通常会产生一个包的展开的处理过的版本（将会在Maven 2.1+中实现）</li>
+<li>mvn package    将编译好的代码打包成可分发的格式，如JAR，WAR，或者EAR</li>
+<li>mvn pre-integration-test    执行一些在集成测试运行之前需要的动作。如建立集成测试需要的环境</li>
+<li>mvn integration-test    如果有必要的话，处理包并发布至集成测试可以运行的环境</li>
+<li>mvn post-integration-test    执行一些在集成测试运行之后需要的动作。如清理集成测试环境。</li>
+<li>mvn verify    执行所有检查，验证包是有效的，符合质量规范</li>
+<li>mvn install    安装包至本地仓库，以备本地的其它项目作为依赖使用</li>
+<li>mvn deploy    复制最终的包至远程仓库，共享给其它开发人员和项目（通常和一次正式的发布相关）<blockquote>
+<p>使用参数<br>Dmaven.test.skip=true: 跳过单元测试(eg: mcn clean package -Dmaven.test.skip=true)</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="dependencies和dependencyManagement，plugins和pluginManagement"><a href="#dependencies和dependencyManagement，plugins和pluginManagement" class="headerlink" title="dependencies和dependencyManagement，plugins和pluginManagement"></a>dependencies和dependencyManagement，plugins和pluginManagement</h2><ul>
+<li>有什么区别？<blockquote>
+<p>dependencyManagement是表示依赖jar包的声明，即你在项目中的dependencyManagement下声明了依赖，maven不会加载该依赖，dependencyManagement声明可以被继承。<br>dependencyManagement的一个使用案例是当有父子项目的时候，父项目中可以利用dependencyManagement声明子项目中需要用到的依赖jar包，之后，当某个或者某几个子项目需要加载该插件的时候，就可以在子项目中dependencies节点只配置 groupId 和 artifactId就可以完成插件的引用。<br>dependencyManagement主要是为了统一管理插件，确保所有子项目使用的插件版本保持一致，类似的还是plugins和pluginManagement。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>项目管理</category>
+      </categories>
+      <tags>
+        <tag>Maven</tag>
+        <tag>项目管理工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown基本使用</title>
+    <url>/2019/10/31/Markdown%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="MarkDown基本使用"><a href="#MarkDown基本使用" class="headerlink" title="MarkDown基本使用"></a>MarkDown基本使用</h1><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><ul>
+<li><p>列表1</p>
+</li>
+<li><p>列表2<br>a 子列表<br>b 子列表</p>
+</li>
+<li><p>列表3</p>
+<a id="more"></a>
+<p><a href="http://www.abtjlwxj.club/tscommunity/" target="_blank" rel="noopener">链接</a></p>
+<p><img src="http://img3.cache.netease.com/photo/0001/2010-03-01/60M9HDLL00AQ0001.JPG" alt="插入图片"></p>
+</li>
+</ul>
+<p><em>斜体字</em><br><strong>加粗字体</strong></p>
+<p><code>单行代码&lt;html&gt;&lt;/html&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">多行代码</span><br><span class="line">            var canvas = document.createElement(&apos;canvas&apos;),</span><br><span class="line">            context = canvas.getContext(&apos;2d&apos;),</span><br><span class="line">            windowW = window.screen.width ,</span><br><span class="line">            windowH = window.screen.height ,</span><br><span class="line">            Mx,</span><br><span class="line">            My,</span><br><span class="line">            paused = true;</span><br><span class="line">            suzu = [];</span><br><span class="line">            booms = [];</span><br><span class="line">            boomks = [];</span><br><span class="line">            start();</span><br><span class="line"></span><br><span class="line">            canvas.onmousemove = function(e) &#123;</span><br><span class="line">                var loc = canvasMove(e.clientX, e.clientY);</span><br><span class="line">                Mx = loc.x;</span><br><span class="line">                My = loc.y</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            canvas.onmousedown = function() &#123;</span><br><span class="line">                creatarry(Mx, My);</span><br><span class="line">                paused = !paused</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            function creatarry(a, b) &#123;</span><br><span class="line">                for (var i = 0; i &lt; 100; ++i) &#123;</span><br><span class="line">                    booms[i] = &#123;</span><br><span class="line">                        x: a,</span><br><span class="line">                        y: b,</span><br><span class="line">                        gravity: 0.3,</span><br><span class="line">                        speedX: Math.random() * 20 - 10,</span><br><span class="line">                        speedY: Math.random() * 15 - 7,</span><br><span class="line">                        radius: Math.random() * 15,</span><br><span class="line">                        color: Math.random() * 360,</span><br><span class="line">                        apc: 0.6</span><br><span class="line">                    &#125;;</span><br><span class="line">                    boomks.push(booms[i]);</span><br><span class="line">                    if (boomks.length &gt; 300) &#123;</span><br><span class="line">                        boomks.shift()</span><br><span class="line">                    &#125;;</span><br><span class="line">                    console.log(boomks)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">	&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>引用内容</p>
+</blockquote>
+<hr>
+<h2 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h2>]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringBoot入门</title>
+    <url>/2019/10/31/SpringBoot%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h2 id="Springboot入门介绍"><a href="#Springboot入门介绍" class="headerlink" title="Springboot入门介绍"></a>Springboot入门介绍</h2><hr>
+<h1 id="一、Spring框架概述"><a href="#一、Spring框架概述" class="headerlink" title="一、Spring框架概述"></a>一、Spring框架概述</h1><h2 id="什么是Spring"><a href="#什么是Spring" class="headerlink" title="什么是Spring"></a>什么是Spring</h2><p>Spring是一个开源框架，Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson 在其著作《Expert One-On-One J2EE Development and Design》。Spring是为了解决企业级应用开发的复杂性而创建的，使用Spring可以让简单的JavaBean实现之前只有EJB才能完成的事情。但是Spring不仅仅局限于服务器端开发，任何Java应用都能在简单性、可测试性和松耦合性等方面从Spring中获益。</p>
+<a id="more"></a>
+<h2 id="Spring是如何简化Java开发的"><a href="#Spring是如何简化Java开发的" class="headerlink" title="Spring是如何简化Java开发的"></a>Spring是如何简化Java开发的</h2><p>为了降低Java开发的复杂性，Spring采用了以下4种关键策略：</p>
+<h3 id="基于POJO的轻量级和最小侵入性编程；"><a href="#基于POJO的轻量级和最小侵入性编程；" class="headerlink" title="基于POJO的轻量级和最小侵入性编程；"></a>基于POJO的轻量级和最小侵入性编程；</h3><h3 id="通过依赖注入（DI）和面向接口实现松耦合；"><a href="#通过依赖注入（DI）和面向接口实现松耦合；" class="headerlink" title="通过依赖注入（DI）和面向接口实现松耦合；"></a>通过依赖注入（DI）和面向接口实现松耦合；</h3><h3 id="基于切面（AOP）和惯例进行声明式编程；"><a href="#基于切面（AOP）和惯例进行声明式编程；" class="headerlink" title="基于切面（AOP）和惯例进行声明式编程；"></a>基于切面（AOP）和惯例进行声明式编程；</h3><h3 id="通过切面和模版减少样式代码；"><a href="#通过切面和模版减少样式代码；" class="headerlink" title="通过切面和模版减少样式代码；"></a>通过切面和模版减少样式代码；</h3><hr>
+<hr>
+<h1 id="二、SpringBoot简介"><a href="#二、SpringBoot简介" class="headerlink" title="二、SpringBoot简介"></a>二、SpringBoot简介</h1><h2 id="什么是SpringBoot"><a href="#什么是SpringBoot" class="headerlink" title="什么是SpringBoot"></a>什么是SpringBoot</h2><p>Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设计是为了让你尽可能快的跑起来 Spring 应用程序并且尽可能减少你的配置文件。简单来说就是SpringBoot其实不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包，spring boot整合了所有的框架（不知道这样比喻是否合适）。</p>
+<h2 id="SpringBoot四个主要特性"><a href="#SpringBoot四个主要特性" class="headerlink" title="SpringBoot四个主要特性"></a>SpringBoot四个主要特性</h2><h3 id="SpringBoot-Starter：他将常用的依赖分组进行了整合，将其合并到一个依赖中，这样就可以一次性添加到项目的Maven或Gradle构建中；"><a href="#SpringBoot-Starter：他将常用的依赖分组进行了整合，将其合并到一个依赖中，这样就可以一次性添加到项目的Maven或Gradle构建中；" class="headerlink" title="SpringBoot Starter：他将常用的依赖分组进行了整合，将其合并到一个依赖中，这样就可以一次性添加到项目的Maven或Gradle构建中；"></a>SpringBoot Starter：他将常用的依赖分组进行了整合，将其合并到一个依赖中，这样就可以一次性添加到项目的Maven或Gradle构建中；</h3><h3 id="自动配置：SpringBoot的自动配置特性利用了Spring4对条件化配置的支持，合理地推测应用所需的bean并自动化配置他们；"><a href="#自动配置：SpringBoot的自动配置特性利用了Spring4对条件化配置的支持，合理地推测应用所需的bean并自动化配置他们；" class="headerlink" title="自动配置：SpringBoot的自动配置特性利用了Spring4对条件化配置的支持，合理地推测应用所需的bean并自动化配置他们；"></a>自动配置：SpringBoot的自动配置特性利用了Spring4对条件化配置的支持，合理地推测应用所需的bean并自动化配置他们；</h3><h3 id="命令行接口：（Command-line-interface-CLI）：SpringBoot的CLI发挥了Groovy编程语言的优势，并结合自动配置进一步简化Spring应用的开发；"><a href="#命令行接口：（Command-line-interface-CLI）：SpringBoot的CLI发挥了Groovy编程语言的优势，并结合自动配置进一步简化Spring应用的开发；" class="headerlink" title="命令行接口：（Command-line-interface, CLI）：SpringBoot的CLI发挥了Groovy编程语言的优势，并结合自动配置进一步简化Spring应用的开发；"></a>命令行接口：（Command-line-interface, CLI）：SpringBoot的CLI发挥了Groovy编程语言的优势，并结合自动配置进一步简化Spring应用的开发；</h3><h3 id="Actuatir：它为SpringBoot应用的所有特性构建一个小型的应用程序。但首先，我们快速了解每项特性，更好的体验他们如何简化Spring编程模型。"><a href="#Actuatir：它为SpringBoot应用的所有特性构建一个小型的应用程序。但首先，我们快速了解每项特性，更好的体验他们如何简化Spring编程模型。" class="headerlink" title="Actuatir：它为SpringBoot应用的所有特性构建一个小型的应用程序。但首先，我们快速了解每项特性，更好的体验他们如何简化Spring编程模型。"></a>Actuatir：它为SpringBoot应用的所有特性构建一个小型的应用程序。但首先，我们快速了解每项特性，更好的体验他们如何简化Spring编程模型。</h3><h2 id="SpringBoot开发的具体好处"><a href="#SpringBoot开发的具体好处" class="headerlink" title="SpringBoot开发的具体好处"></a>SpringBoot开发的具体好处</h2><p>回顾我们之前的 SSM 项目，搭建过程还是比较繁琐的，需要：</p>
+<h3 id="配置web-xml，加载spring和spring-mvc"><a href="#配置web-xml，加载spring和spring-mvc" class="headerlink" title="配置web.xml，加载spring和spring mvc"></a>配置web.xml，加载spring和spring mvc</h3><h3 id="配置数据库连接、配置spring事务"><a href="#配置数据库连接、配置spring事务" class="headerlink" title="配置数据库连接、配置spring事务"></a>配置数据库连接、配置spring事务</h3><h3 id="配置加载配置文件的读取，开启注解"><a href="#配置加载配置文件的读取，开启注解" class="headerlink" title="配置加载配置文件的读取，开启注解"></a>配置加载配置文件的读取，开启注解</h3><h4 id="配置完成之后部署tomcat-调试"><a href="#配置完成之后部署tomcat-调试" class="headerlink" title="配置完成之后部署tomcat 调试"></a>配置完成之后部署tomcat 调试</h4><h4 id="而使用-Spring-Boot-来开发项目则只需要非常少的几个配置就可以搭建起来一个-Web-项目，并且利用-IDEA-可以自动生成生成，这简直是太爽了…"><a href="#而使用-Spring-Boot-来开发项目则只需要非常少的几个配置就可以搭建起来一个-Web-项目，并且利用-IDEA-可以自动生成生成，这简直是太爽了…" class="headerlink" title="而使用 Spring Boot 来开发项目则只需要非常少的几个配置就可以搭建起来一个 Web 项目，并且利用 IDEA 可以自动生成生成，这简直是太爽了…"></a>而使用 Spring Boot 来开发项目则只需要非常少的几个配置就可以搭建起来一个 Web 项目，并且利用 IDEA 可以自动生成生成，这简直是太爽了…</h4><hr>
+<hr>
+<h1 id="三、使用IDEA快速搭建SpringBoot项目"><a href="#三、使用IDEA快速搭建SpringBoot项目" class="headerlink" title="三、使用IDEA快速搭建SpringBoot项目"></a>三、使用IDEA快速搭建SpringBoot项目</h1><h2 id="file-gt-new-project-在弹出的窗口选择Spring-Initializr"><a href="#file-gt-new-project-在弹出的窗口选择Spring-Initializr" class="headerlink" title="file-&gt;new project 在弹出的窗口选择Spring Initializr"></a>file-&gt;new project 在弹出的窗口选择Spring Initializr</h2><h2 id="修改项目信息"><a href="#修改项目信息" class="headerlink" title="修改项目信息"></a>修改项目信息</h2><h2 id="选择版本及项目需要的依赖"><a href="#选择版本及项目需要的依赖" class="headerlink" title="选择版本及项目需要的依赖"></a>选择版本及项目需要的依赖</h2><h2 id="最终目录结构"><a href="#最终目录结构" class="headerlink" title="最终目录结构"></a>最终目录结构</h2><p>项目结构还是看上去挺清爽的，少了很多配置文件，我们来了解一下默认生成的有什么：</p>
+<pre><code>EurekaServerApplication： 一个带有 main() 方法的类，用于启动应用程序
+EurekaServerApplicationTests：一个空的 Junit 测试了，它加载了一个使用 Spring Boot 字典配置功能的 Spring 应用程序上下文
+application.properties：一个空的 properties 文件，可以根据需要添加配置属性
+pom.xml： Maven 构建说明文件</code></pre><hr>
+<hr>
+<h1 id="四、项目简单介绍及helloworld编写"><a href="#四、项目简单介绍及helloworld编写" class="headerlink" title="四、项目简单介绍及helloworld编写"></a>四、项目简单介绍及helloworld编写</h1><h2 id="写一个helloWorld接口"><a href="#写一个helloWorld接口" class="headerlink" title="写一个helloWorld接口"></a>写一个helloWorld接口</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    @RestController</span><br><span class="line">    @RequestMapping(&quot;/&quot;)</span><br><span class="line">    public class HelloWorldController &#123;</span><br><span class="line">        @RequestMapping(&quot;hello&quot;)</span><br><span class="line">        public String index() &#123;</span><br><span class="line">            return &quot;Hello World&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">@RestController 注解： 该注解是 @Controller 和 @ResponseBody 注解的合体版</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest</span><br><span class="line">public class ServiceAuthApplicationTests &#123;</span><br><span class="line">   private MockMvc mvc;</span><br><span class="line">   @Before</span><br><span class="line">   public void setUp() &#123;</span><br><span class="line">      mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();</span><br><span class="line">   &#125;</span><br><span class="line">   @Test</span><br><span class="line">   public void contextLoads() throws Exception &#123;</span><br><span class="line">                mvc.perform(MockMvcRequestBuilders.get(&quot;/hello&quot;).accept(</span><br><span class="line"> </span><br><span class="line">        MediaType.APPLICATION_JSON))</span><br><span class="line">            .andExpect(MockMvcResultMatchers.status().isOk())</span><br><span class="line">            .andDo(MockMvcResultHandlers.print())</span><br><span class="line">            .andReturn();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="pom文件介绍"><a href="#pom文件介绍" class="headerlink" title="pom文件介绍"></a>pom文件介绍</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    &lt;groupId&gt;com.test&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springboot&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;packaging&gt;pom&lt;/packaging&gt;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">    &lt;name&gt;spring-cloud-demo&lt;/name&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.5.18.BUILD-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;repositories&gt;</span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;spring-snapshots&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;Spring Snapshots&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;</span><br><span class="line">            &lt;snapshots&gt;</span><br><span class="line">                &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">            &lt;/snapshots&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line"> </span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;spring-milestones&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;Spring Milestones&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;</span><br><span class="line">            &lt;snapshots&gt;</span><br><span class="line">                &lt;enabled&gt;false&lt;/enabled&gt;</span><br><span class="line">            &lt;/snapshots&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line">    &lt;/repositories&gt;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    &lt;pluginRepositories&gt;</span><br><span class="line"> </span><br><span class="line">        &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;spring-snapshots&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;Spring Snapshots&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;</span><br><span class="line">            &lt;snapshots&gt;</span><br><span class="line">                &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">            &lt;/snapshots&gt;</span><br><span class="line">        &lt;/pluginRepository&gt;</span><br><span class="line"> </span><br><span class="line">        &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;spring-milestones&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;Spring Milestones&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;</span><br><span class="line">            &lt;snapshots&gt;</span><br><span class="line">                &lt;enabled&gt;false&lt;/enabled&gt;</span><br><span class="line">            &lt;/snapshots&gt;</span><br><span class="line">        &lt;/pluginRepository&gt;</span><br><span class="line">    &lt;/pluginRepositories&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<p>这个标签是在配置 Spring Boot 的父级依赖</p>
+<p>有了这个，当前的项目才是 Spring Boot 项目，spring-boot-starter-parent 是一个特殊的 starter ，它用来提供相关的 Maven 默认依赖，使用它之后，常用的包依赖就可以省去 version 标签。</p>
+<h2 id="启动类介绍（-Application）"><a href="#启动类介绍（-Application）" class="headerlink" title="启动类介绍（*Application）"></a>启动类介绍（*Application）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    @SpringBootApplication</span><br><span class="line">    public class EurekaServerApplication &#123;</span><br><span class="line">        public static void main(String[] args) &#123;</span><br><span class="line">            SpringApplication.run(EurekaServerApplication.class, args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication是springBoot的核心注解注解： 该注解是@Configuration、@EnableAutoConfiguration、@ComponentScan 注解的合体版</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="properties介绍"><a href="#properties介绍" class="headerlink" title="properties介绍"></a>properties介绍</h2><p>springBoot 使用一个全局的配置文件 application.properties 或 application.yml，放置在【src/main/resources】目录下</p>
+<p>将 Tomcat 默认端口设置为 9090 ，并将默认的访问路径从 “/” 修改为 “/test” 时，使用 properties 文件</p>
+]]></content>
+      <categories>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java发展前景</title>
+    <url>/2019/10/30/Java%E5%8F%91%E5%B1%95%E5%89%8D%E6%99%AF/</url>
+    <content><![CDATA[<h1 id="Java发展前景"><a href="#Java发展前景" class="headerlink" title="Java发展前景"></a>Java发展前景</h1><a id="more"></a>
+<p>Java语言完全满足了PC的条件,在减少内存,直接在各类电子产品中运行,在网络中可被任何设备所识别,<br>充分利用网络资源等方面有所突破创新,为PC时代的发展创造了有力条件。 随着IT产业的发展,许多企<br>业中的计算机应用程序也在随之转型,企业中所应用的计算机模式逐渐向客户端较小、服务器随之增大、<br>数据库的容量也在相应增加的方向转变。此外,加上Java语言独有的特点,根据其在各项服务器中应用程<br>序的开发所占有的优势”<br>java技术现在几乎无处不在，<br>你只要使用到电子产品就会接触到java相关的东西，现在大多数的企业也是使用java语言进行开发。<br>大数据、移动应用开发也是如火如荼的发展着，所以说现在java就业前景非常的好。现在的java程序师<br>占据了所有程序师的比例也是很高的，java语言是全球最流行的开发语言。</p>
+<p>我国目前对软件人才的需求已达20万并且以每年20%左右的速度增长，国家非常重视软件行业的发展。</p>
+<h2 id="需求大"><a href="#需求大" class="headerlink" title="需求大"></a>需求大</h2><p>现在一般软件公司，大多需要java方面的工程师，一般的嵌入式公司也是同样需要java方面的人才，<br>我国信息化人才缺口也是很大的。软件技术、交互设计等人才缺口突出。</p>
+<h2 id="工资高"><a href="#工资高" class="headerlink" title="工资高"></a>工资高</h2><p>程序员一直都是被常人所议论的高薪行业，java方面的程序员工资比其他语言要高，一般的高级程<br>序员年薪10万是正常的。而且一般的大厂一线互联网公司薪资20万也是正常的。即使刚毕业也会比<br>其他行业刚毕业要高。去BAT公司做码农努力四五年能够达到阿里p7级别年收入40/50万应该不成问题。</p>
+<h2 id="就业广"><a href="#就业广" class="headerlink" title="就业广"></a>就业广</h2><p>JSP网站开发、Java编程、Java游戏开发、Java桌面程序设计，以及其他与Java语言编程相关的工作，<br>也可进入电信、银行、医疗、邮箱、物流、保险专业软件开发公司等从事软件设计和开发工作。</p>
+<p>在最好的年纪一定要多学一点知识，不要嫌弃繁重，能够了解的最好是了解一下跟上时代发展，毕竟互联网时代更新发展很快的哟!</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>发展</tag>
+      </tags>
+  </entry>
+</search>

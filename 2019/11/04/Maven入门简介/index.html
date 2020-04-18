@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-circle.min.css">
+  <script src="true"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Maven入门简介：概念Maven是什么Maven 是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。版本maven有自己的版本定义和规则">
+<meta name="keywords" content="Maven,项目管理工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 入门简介">
+<meta property="og:url" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;2019&#x2F;11&#x2F;04&#x2F;Maven%E5%85%A5%E9%97%A8%E7%AE%80%E4%BB%8B&#x2F;index.html">
+<meta property="og:site_name" content="汤吉林的博客">
+<meta property="og:description" content="Maven入门简介：概念Maven是什么Maven 是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。版本maven有自己的版本定义和规则">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven14.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven11.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven12.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven13.png">
+<meta property="og:updated_time" content="2019-11-11T10:52:29.085Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;tangjilin-java.github.io&#x2F;images&#x2F;Maven&#x2F;maven2.png">
+
+<link rel="canonical" href="https://tangjilin-java.github.io/2019/11/04/Maven%E5%85%A5%E9%97%A8%E7%AE%80%E4%BB%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Maven 入门简介 | 汤吉林的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+  <div class="container use-motion">
+  
+    <div class="headband">
+	</div>
+		<a href="https://github.com/tangjilin-java/" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="100" height="100" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">汤吉林的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">汤吉林的技术博客 不定时更新Java技术知识</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangjilin-java.github.io/2019/11/04/Maven%E5%85%A5%E9%97%A8%E7%AE%80%E4%BB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汤吉林">
+      <meta itemprop="description" content="Java-SpringBoot">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汤吉林的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Maven 入门简介
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-04 10:36:31" itemprop="dateCreated datePublished" datetime="2019-11-04T10:36:31+08:00">2019-11-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-11 18:52:29" itemprop="dateModified" datetime="2019-11-11T18:52:29+08:00">2019-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">项目管理</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/04/Maven%E5%85%A5%E9%97%A8%E7%AE%80%E4%BB%8B/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/04/Maven%E5%85%A5%E9%97%A8%E7%AE%80%E4%BB%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>14k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>26 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Maven入门简介："><a href="#Maven入门简介：" class="headerlink" title="Maven入门简介："></a>Maven入门简介：</h1><h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="Maven是什么"><a href="#Maven是什么" class="headerlink" title="Maven是什么"></a>Maven是什么</h2><h3 id="Maven-是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。"><a href="#Maven-是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。" class="headerlink" title="Maven 是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。"></a>Maven 是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。</h3><h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><h3 id="maven有自己的版本定义和规则"><a href="#maven有自己的版本定义和规则" class="headerlink" title="maven有自己的版本定义和规则"></a>maven有自己的版本定义和规则</h3><a id="more"></a>
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><h3 id="maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。"><a href="#maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。" class="headerlink" title="maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。"></a>maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。</h3><h2 id="输出物管理"><a href="#输出物管理" class="headerlink" title="输出物管理"></a>输出物管理</h2><h3 id="maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为"><a href="#maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为" class="headerlink" title="maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为"></a>maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为</h3><h2 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h2><h3 id="maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为"><a href="#maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为" class="headerlink" title="maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为"></a>maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为</h3><h2 id="文档和构建结果"><a href="#文档和构建结果" class="headerlink" title="文档和构建结果"></a>文档和构建结果</h2><h3 id="maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。"><a href="#maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。" class="headerlink" title="maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。"></a>maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。</h3><h2 id="项目关系"><a href="#项目关系" class="headerlink" title="项目关系"></a>项目关系</h2><h3 id="一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理"><a href="#一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理" class="headerlink" title="一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理"></a>一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理</h3><h2 id="移植性管理"><a href="#移植性管理" class="headerlink" title="移植性管理"></a>移植性管理</h2><h3 id="maven可以针对不同的开发场景，输出不同种类的输出结果"><a href="#maven可以针对不同的开发场景，输出不同种类的输出结果" class="headerlink" title="maven可以针对不同的开发场景，输出不同种类的输出结果"></a>maven可以针对不同的开发场景，输出不同种类的输出结果</h3><h2 id="Maven的好处"><a href="#Maven的好处" class="headerlink" title="Maven的好处"></a>Maven的好处</h2><ul>
+<li>节省磁盘空间</li>
+<li>可以一键构建</li>
+<li>可以跨平台</li>
+<li>应用在大型项目时可以提高开发效率<h2 id="Maven相似项目管理器"><a href="#Maven相似项目管理器" class="headerlink" title="Maven相似项目管理器"></a>Maven相似项目管理器</h2><h3 id="据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。"><a href="#据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。" class="headerlink" title="据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。"></a>据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。</h3><h2 id="Maven的生命周期"><a href="#Maven的生命周期" class="headerlink" title="Maven的生命周期"></a>Maven的生命周期</h2><h3 id="maven把项目的构建划分为不同的生命周期-lifecycle-。粗略一点的话，它这个过程-phase-包括：编译-Compile-、测试-Test-、打包-Package-、集成测试-Install-、验证-Clean-、部署-Deploy-。maven中所有的执行动作-goal-都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。"><a href="#maven把项目的构建划分为不同的生命周期-lifecycle-。粗略一点的话，它这个过程-phase-包括：编译-Compile-、测试-Test-、打包-Package-、集成测试-Install-、验证-Clean-、部署-Deploy-。maven中所有的执行动作-goal-都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。" class="headerlink" title="maven把项目的构建划分为不同的生命周期(lifecycle)。粗略一点的话，它这个过程(phase)包括：编译(Compile)、测试(Test)、打包(Package)、集成测试(Install)、验证(Clean)、部署(Deploy)。maven中所有的执行动作(goal)都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。"></a>maven把项目的构建划分为不同的生命周期(lifecycle)。粗略一点的话，它这个过程(phase)包括：编译(Compile)、测试(Test)、打包(Package)、集成测试(Install)、验证(Clean)、部署(Deploy)。maven中所有的执行动作(goal)都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。</h3><h2 id="Maven的标准工程结构"><a href="#Maven的标准工程结构" class="headerlink" title="Maven的标准工程结构"></a>Maven的标准工程结构</h2><h3 id="Maven的标准工程结构如下："><a href="#Maven的标准工程结构如下：" class="headerlink" title="Maven的标准工程结构如下："></a>Maven的标准工程结构如下：</h3><blockquote>
+</blockquote>
+|– pom.xml(maven的核心配置文件)<br>|– src<br>|– main<br>|   <code>-- java(java源代码目录)
+|</code>– resources(资源文件目录)<br>|– test<pre><code>`-- java(单元测试代码目录)</code></pre>|– target(输出目录，所有的输出物都存放在这个目录下)<br>  |–classes(编译后的class文件存放处)</li>
+</ul>
+<h2 id="Maven的”约定优于配置”"><a href="#Maven的”约定优于配置”" class="headerlink" title="Maven的”约定优于配置”"></a>Maven的”约定优于配置”</h2><h3 id="所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下："><a href="#所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下：" class="headerlink" title="所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下："></a>所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下：</h3><p><em>每一个阶段的任务都知道怎么正确完成自己的工作，比如compile任务就知道从src/main/java下编译所有的java文件，并把它的输出class文件存放到target/classes中。<br>对maven来说，采用”约定优于配置”的策略可以减少修改配置的工作量，也可以降低学习成本，更重要的是，给项目引入了统一的规范。</em></p>
+<h2 id="Maven的版本规范"><a href="#Maven的版本规范" class="headerlink" title="Maven的版本规范"></a>Maven的版本规范</h2><h3 id="maven使用如下几个要素来唯一定位某一个输出物："><a href="#maven使用如下几个要素来唯一定位某一个输出物：" class="headerlink" title="maven使用如下几个要素来唯一定位某一个输出物："></a>maven使用如下几个要素来唯一定位某一个输出物：</h3><ul>
+<li>groudId<br>团体、组织的标识符。团体标识的约定是，它以创建这个项目的组织名称的逆向域名(reverse domain name)开头。一般对应着JAVA的包的结构。例如org.apache</li>
+<li>artifactId<br>单独项目的唯一标识符。比如我们的tomcat, commons等。不要在artifactId中包含点号(.)。</li>
+<li>version<br>一个项目的特定版本。</li>
+<li>packaging<br>项目的类型，默认是jar，描述了项目打包后的输出。类型为jar的项目产生一个JAR文件，类型为war的项目产生一个web应用。maven有自己的版本规范，一般是如下定义 <major version>.<minor version>.<incremental version>-<qualifier> ，比如1.2.3-beta-01。要说明的是，maven自己判断版本的算法是major,minor,incremental部分用数字比较，qualifier部分用字符串比较，所以要小心 alpha-2和alpha-15的比较关系，最好用 alpha-02的格式。<br>maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST，RELEASE。比如”1.0-SNAPSHOT”。各个部分的含义和处理逻辑如下说明：</qualifier></incremental></minor></major></li>
+<li>SNAPSHOT<br>这个版本一般用于开发过程中，表示不稳定的版本。</li>
+<li>LATEST<br>指某个特定构件的最新发布，这个发布可能是一个发布版，也可能是一个snapshot版，具体看哪个时间最后。</li>
+<li>RELEASE<br>指最后一个发布版。</li>
+</ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="官网下载地址"><a href="#官网下载地址" class="headerlink" title="官网下载地址"></a>官网下载地址</h2><p><a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven官网下载地址</a></p>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><h3 id="安装maven之前，必须先确保你的机器中已经安装了JDK。maven3-3-版本需要jdkj-7-以上的支持"><a href="#安装maven之前，必须先确保你的机器中已经安装了JDK。maven3-3-版本需要jdkj-7-以上的支持" class="headerlink" title="安装maven之前，必须先确保你的机器中已经安装了JDK。maven3.3+版本需要jdkj.7+以上的支持"></a>安装maven之前，必须先确保你的机器中已经安装了JDK。maven3.3+版本需要jdkj.7+以上的支持</h3><ul>
+<li>1．解压压缩包（以apache-maven-3.3.9-bin.zip为例）</li>
+<li>2．添加环境变量MAVEN_HOME，值为apache-maven-3.3.9的安装路径<br><img src="/images/Maven/maven2.png" alt></li>
+<li>3．在Path环境变量的变量值末尾添加%MAVEN_HOME%\bin</li>
+<li>4．在cmd输入mvn –version，如果出现maven的版本信息，说明配置成功。<img src="/images/Maven/maven.png" alt><h2 id="本地仓储配置"><a href="#本地仓储配置" class="headerlink" title="本地仓储配置"></a>本地仓储配置</h2><h3 id="从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting-xml文件。可以参照下图配置本地仓储位置。"><a href="#从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting-xml文件。可以参照下图配置本地仓储位置。" class="headerlink" title="从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting.xml文件。可以参照下图配置本地仓储位置。"></a>从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting.xml文件。可以参照下图配置本地仓储位置。</h3><img src="/images/Maven/maven3.png" alt><h1 id="第一个Maven工程"><a href="#第一个Maven工程" class="headerlink" title="第一个Maven工程"></a>第一个Maven工程</h1><h2 id="在Eclipse中创建Maven工程"><a href="#在Eclipse中创建Maven工程" class="headerlink" title="在Eclipse中创建Maven工程"></a>在Eclipse中创建Maven工程</h2><h2 id="Maven插件"><a href="#Maven插件" class="headerlink" title="Maven插件"></a>Maven插件</h2><h2 id="在Eclipse中创建Maven工程，需要安装Maven插件。"><a href="#在Eclipse中创建Maven工程，需要安装Maven插件。" class="headerlink" title="在Eclipse中创建Maven工程，需要安装Maven插件。"></a>在Eclipse中创建Maven工程，需要安装Maven插件。</h2>###一般较新版本的Eclipse都会带有Maven插件，如果你的Eclipse中已经有Maven插件，可以跳过这一步骤。<blockquote>
+<p>点击Help -&gt; Eclipse Marketplace，搜索maven关键字，选择安装红框对应的Maven插件。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Maven环境配置"><a href="#Maven环境配置" class="headerlink" title="Maven环境配置"></a>Maven环境配置</h2><blockquote>
+<p>点击Window -&gt; Preferences<br>如下图所示，配置settings.xml文件的位置<br><img src="/images/Maven/maven5.png" alt></p>
+</blockquote>
+<h2 id="创建Maven工程"><a href="#创建Maven工程" class="headerlink" title="创建Maven工程"></a>创建Maven工程</h2><blockquote>
+<p>File -&gt; New -&gt; Maven Project -&gt; Next，在接下来的窗口中会看到一大堆的项目模板，选择合适的模板。<br>接下来设置项目的参数，如下：<br><img src="/images/Maven/maven6.png" alt></p>
+</blockquote>
+<ul>
+<li>groupId是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。</li>
+<li>artifactId就是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。<br>点击Finish，Eclipse会创建一个Maven工程。</li>
+</ul>
+<h2 id="使用Maven进行构建"><a href="#使用Maven进行构建" class="headerlink" title="使用Maven进行构建"></a>使用Maven进行构建</h2><h3 id="Eclipse中构建方式"><a href="#Eclipse中构建方式" class="headerlink" title="Eclipse中构建方式"></a>Eclipse中构建方式</h3><ul>
+<li>在Elipse项目上右击 -&gt; Run As 就能看到很多Maven操作。这些操作和maven命令是等效的。例如Maven clean，等同于mvn clean命令。<br><img src="/images/Maven/maven7.png" alt></li>
+<li>你也可以点击Maven build，输入组合命令，并保存下来。如下图：<br><img src="/images/Maven/maven14.png" alt></li>
+</ul>
+<h3 id="Maven命令构建方式"><a href="#Maven命令构建方式" class="headerlink" title="Maven命令构建方式"></a>Maven命令构建方式</h3><blockquote>
+<p>当然，你也可以直接使用maven命令进行构建。<br>进入工程所在目录，输入maven命令就可以了。<br>如下图<br><img src="/images/Maven/maven8.png" alt></p>
+</blockquote>
+<h1 id="使用指导"><a href="#使用指导" class="headerlink" title="使用指导"></a>使用指导</h1><h2 id="如何添加外部依赖jar包"><a href="#如何添加外部依赖jar包" class="headerlink" title="如何添加外部依赖jar包"></a>如何添加外部依赖jar包</h2><h3 id="在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。"><a href="#在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。" class="headerlink" title="在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。"></a>在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的<dependency>标签即可。</dependency></h3><h3 id="参考下例："><a href="#参考下例：" class="headerlink" title="参考下例："></a>参考下例：</h3><pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+        &lt;optional&gt;true&lt;/optional&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.squareup.okhttp3&lt;/groupId&gt;
+        &lt;artifactId&gt;okhttp&lt;/artifactId&gt;
+        &lt;version&gt;3.14.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+        &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+        &lt;version&gt;1.2.57&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+        &lt;artifactId&gt;h2&lt;/artifactId&gt;
+        &lt;version&gt;1.4.199&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;mysql&lt;/groupId&gt;
+        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+        &lt;version&gt;5.1.45&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+        &lt;version&gt;2.1.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+        &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+        &lt;version&gt;1.18.6&lt;/version&gt;
+        &lt;scope&gt;provided&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+        &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;
+        &lt;version&gt;3.9&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!--云储存--&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;cn.ucloud.ufile&lt;/groupId&gt;
+        &lt;artifactId&gt;ufile-client-java&lt;/artifactId&gt;
+        &lt;version&gt;2.1.2&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.flywaydb&lt;/groupId&gt;
+            &lt;artifactId&gt;flyway-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;5.2.4&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;url&gt;jdbc:mysql://localhost:3306/community&lt;/url&gt;
+                &lt;user&gt;root&lt;/user&gt;
+                &lt;password&gt;1234&lt;/password&gt;
+            &lt;/configuration&gt;
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;mysql&lt;/groupId&gt;
+                    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+                    &lt;version&gt;5.1.45&lt;/version&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
+        &lt;/plugin&gt;
+
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;1.3.7&lt;/version&gt;
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;mysql&lt;/groupId&gt;
+                    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+                    &lt;version&gt;5.1.45&lt;/version&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre><blockquote>
+<p><dependency>标签最常用的四个属性标签：</dependency></p>
+</blockquote>
+<ul>
+<li>groupId：项目组织唯一的标识符，实际对应JAVA的包的结构。</li>
+<li>artifactId：项目唯一的标识符，实际对应项目的名称，就是项目根目录的名称。</li>
+<li>version：jar包的版本号。可以直接填版本数字，也可以在properties标签中设置属性值。</li>
+<li>scope：jar包的作用范围。可以填写compile、runtime、test、system和provided。用来在编译、测试等场景下选择对应的classpath。<h2 id="Maven依赖范围"><a href="#Maven依赖范围" class="headerlink" title="Maven依赖范围"></a>Maven依赖范围</h2><blockquote>
+<p>Compile、Test、Runtime、Provided</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="如何寻找jar包"><a href="#如何寻找jar包" class="headerlink" title="如何寻找jar包"></a>如何寻找jar包</h2><h3 id="可以在Maven仓库地址站点搜寻你想要的jar包版本"><a href="#可以在Maven仓库地址站点搜寻你想要的jar包版本" class="headerlink" title="可以在Maven仓库地址站点搜寻你想要的jar包版本"></a>可以在<a href="http://mvnrepository.com/" target="_blank" rel="noopener">Maven仓库地址</a>站点搜寻你想要的jar包版本</h3><blockquote>
+<p>例如，想要使用log4j，可以找到需要的版本号，然后拷贝对应的maven标签信息，将其添加到pom .xml文件中。</p>
+</blockquote>
+<h2 id="如何使用Maven插件-Plugin"><a href="#如何使用Maven插件-Plugin" class="headerlink" title="如何使用Maven插件(Plugin)"></a>如何使用Maven插件(Plugin)</h2><h3 id="要添加Maven插件，可以在pom-xml文件中添加标签。"><a href="#要添加Maven插件，可以在pom-xml文件中添加标签。" class="headerlink" title="要添加Maven插件，可以在pom.xml文件中添加标签。"></a>要添加Maven插件，可以在pom.xml文件中添加<plugin>标签。</plugin></h3><pre><code>&lt;plugin&gt;
+  &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+  &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+  &lt;version&gt;3.3&lt;/version&gt;
+  &lt;configuration&gt;
+    &lt;source&gt;1.7&lt;/source&gt;
+    &lt;target&gt;1.7&lt;/target&gt;
+  &lt;/configuration&gt;
+&lt;/plugin&gt;</code></pre><h3 id="标签用来配置插件的一些使用参数。"><a href="#标签用来配置插件的一些使用参数。" class="headerlink" title="标签用来配置插件的一些使用参数。"></a><configuration>标签用来配置插件的一些使用参数。</configuration></h3><h2 id="如何一次编译多个工程"><a href="#如何一次编译多个工程" class="headerlink" title="如何一次编译多个工程"></a>如何一次编译多个工程</h2><h3 id="在Maven中，允许一个Maven-Project中有多个Maven-Module"><a href="#在Maven中，允许一个Maven-Project中有多个Maven-Module" class="headerlink" title="在Maven中，允许一个Maven Project中有多个Maven Module"></a>在Maven中，允许一个Maven Project中有多个Maven Module</h3><ul>
+<li>1.创建maven父工程步骤：new–&gt;other–&gt;选择maven project–&gt;next–&gt;勾选create a simple project–&gt;next–&gt;填写Group Id、Artifact Id、Version –&gt; packaging选择pom–&gt;finish。<br><img src="/images/Maven/maven11.png" alt></li>
+<li>2.创建maven子工程步骤：选中刚才创建的父工程右键–&gt;new–&gt;other–&gt;选择maven module–&gt;next–勾选create a simple project–&gt;填写module name（其实就是artifact id）–&gt;next–&gt;GAV继承父工程–&gt;packaging选择你需要的–&gt;finish。<br><img src="/images/Maven/maven12.png" alt></li>
+<li>3.完成，刷新父工程；如有多个子工程，继续按照第二步骤创建。<h3 id><a href="#" class="headerlink" title></a><img src="/images/Maven/maven13.png" alt></h3><h3 id="这时打开XXX中的pom-xml可以看到其中有以下标签"><a href="#这时打开XXX中的pom-xml可以看到其中有以下标签" class="headerlink" title="这时打开XXX中的pom.xml可以看到其中有以下标签"></a>这时打开XXX中的pom.xml可以看到其中有以下标签</h3><blockquote>
+<modules>
+<module>xxx1</module>
+</modules>
+</blockquote>
+<h3 id="选择编译XXX时，会依次对它的所有Module执行相同操作。"><a href="#选择编译XXX时，会依次对它的所有Module执行相同操作。" class="headerlink" title="选择编译XXX时，会依次对它的所有Module执行相同操作。"></a>选择编译XXX时，会依次对它的所有Module执行相同操作。</h3></li>
+</ul>
+<h2 id="常用Maven插件"><a href="#常用Maven插件" class="headerlink" title="常用Maven插件"></a>常用Maven插件</h2><ul>
+<li><p>maven-antrun-plugin<br><a href="http://maven.apache.org/plugins/maven-antrun-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-antrun-plugin/</a><br>maven-antrun-plugin能让用户在Maven项目中运行Ant任务。用户可以直接在该插件的配置以Ant的方式编写Target，然后交给该插件的run目标去执行。在一些由Ant往Maven迁移的项目中，该插件尤其有用。此外当你发现需要编写一些自定义程度很高的任务，同时又觉得Maven不够灵活时，也可以以Ant的方式实现之。maven-antrun-plugin的run目标通常与生命周期绑定运行。</p>
+</li>
+<li><p>maven-archetype-plugin<br><a href="http://maven.apache.org/archetype/maven-archetype-plugin/" target="_blank" rel="noopener">http://maven.apache.org/archetype/maven-archetype-plugin/</a><br>Archtype指项目的骨架，Maven初学者最开始执行的Maven命令可能就是mvn archetype:generate，这实际上就是让maven-archetype-plugin生成一个很简单的项目骨架，帮助开发者快速上手。可能也有人看到一些文档写了mvn archetype:create，但实际上create目标已经被弃用了，取而代之的是generate目标，该目标使用交互式的方式提示用户输入必要的信息以创建项目，体验更好。 maven-archetype-plugin还有一些其他目标帮助用户自己定义项目原型，例如你由一个产品需要交付给很多客户进行二次开发，你就可以为他们提供一个Archtype，帮助他们快速上手。</p>
+</li>
+<li><p>maven-assembly-plugin<br><a href="http://maven.apache.org/plugins/maven-assembly-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-assembly-plugin/</a><br>maven-assembly-plugin的用途是制作项目分发包，该分发包可能包含了项目的可执行文件、源代码、readme、平台脚本等等。 maven-assembly-plugin支持各种主流的格式如zip、tar.gz、jar和war等，具体打包哪些文件是高度可控的，例如用户可以按文件级别的粒度、文件集级别的粒度、模块级别的粒度、以及依赖级别的粒度控制打包，此外，包含和排除配置也是支持的。maven-assembly- plugin要求用户使用一个名为assembly.xml的元数据文件来表述打包，它的single目标可以直接在命令行调用，也可以被绑定至生命周期。</p>
+</li>
+<li><p>maven-dependency-plugin<br><a href="http://maven.apache.org/plugins/maven-dependency-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-dependency-plugin/</a><br>maven-dependency-plugin最大的用途是帮助分析项目依赖，dependency:list能够列出项目最终解析到的依赖列表，dependency:tree能进一步的描绘项目依赖树，dependency:analyze可以告诉你项目依赖潜在的问题，如果你有直接使用到的却未声明的依赖，该目标就会发出警告。maven-dependency-plugin还有很多目标帮助你操作依赖文件，例如dependency:copy-dependencies能将项目依赖从本地Maven仓库复制到某个特定的文件夹下面。</p>
+</li>
+<li><p>maven-enforcer-plugin<br><a href="http://maven.apache.org/plugins/maven-enforcer-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-enforcer-plugin/</a><br>在一个稍大一点的组织或团队中，你无法保证所有成员都熟悉Maven，那他们做一些比较愚蠢的事情就会变得很正常，例如给项目引入了外部的 SNAPSHOT依赖而导致构建不稳定，使用了一个与大家不一致的Maven版本而经常抱怨构建出现诡异问题。maven-enforcer- plugin能够帮助你避免之类问题，它允许你创建一系列规则强制大家遵守，包括设定Java版本、设定Maven版本、禁止某些依赖、禁止 SNAPSHOT依赖。只要在一个父POM配置规则，然后让大家继承，当规则遭到破坏的时候，Maven就会报错。除了标准的规则之外，你还可以扩展该插件，编写自己的规则。maven-enforcer-plugin的enforce目标负责检查规则，它默认绑定到生命周期的validate阶段。</p>
+</li>
+<li><p>maven-help-plugin<br><a href="http://maven.apache.org/plugins/maven-help-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-help-plugin/</a><br>maven-help-plugin是一个小巧的辅助工具，最简单的help:system可以打印所有可用的环境变量和Java系统属性。help:effective-pom和help:effective-settings最为有用，它们分别打印项目的有效POM和有效settings，有效POM是指合并了所有父POM（包括Super POM）后的XML，当你不确定POM的某些信息从何而来时，就可以查看有效POM。有效settings同理，特别是当你发现自己配置的 settings.xml没有生效时，就可以用help:effective-settings来验证。此外，maven-help-plugin的describe目标可以帮助你描述任何一个Maven插件的信息，还有all-profiles目标和active-profiles目标帮助查看项目的Profile。</p>
+</li>
+<li><p>maven-release-plugin<br><a href="http://maven.apache.org/plugins/maven-release-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-release-plugin/</a><br>maven-release-plugin的用途是帮助自动化项目版本发布，它依赖于POM中的SCM信息。release:prepare用来准备版本发布，具体的工作包括检查是否有未提交代码、检查是否有SNAPSHOT依赖、升级项目的SNAPSHOT版本至RELEASE版本、为项目打标签等等。release:perform则是签出标签中的RELEASE源码，构建并发布。版本发布是非常琐碎的工作，它涉及了各种检查，而且由于该工作仅仅是偶尔需要，因此手动操作很容易遗漏一些细节，maven-release-plugin让该工作变得非常快速简便，不易出错。maven-release-plugin的各种目标通常直接在命令行调用，因为版本发布显然不是日常构建生命周期的一部分。</p>
+</li>
+<li><p>maven-resources-plugin<br><a href="http://maven.apache.org/plugins/maven-resources-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-resources-plugin/</a><br>为了使项目结构更为清晰，Maven区别对待Java代码文件和资源文件，maven-compiler-plugin用来编译Java代码，maven-resources-plugin则用来处理资源文件。默认的主资源文件目录是src/main/resources，很多用户会需要添加额外的资源文件目录，这个时候就可以通过配置maven-resources-plugin来实现。此外，资源文件过滤也是Maven的一大特性，你可以在资源文件中使用${propertyName}形式的Maven属性，然后配置maven-resources-plugin开启对资源文件的过滤，之后就可以针对不同环境通过命令行或者Profile传入属性的值，以实现更为灵活的构建。</p>
+</li>
+<li><p>maven-surefire-plugin<br><a href="http://maven.apache.org/plugins/maven-surefire-plugin/" target="_blank" rel="noopener">http://maven.apache.org/plugins/maven-surefire-plugin/</a><br>可能是由于历史的原因，Maven 2/3中用于执行测试的插件不是maven-test-plugin，而是maven-surefire-plugin。其实大部分时间内，只要你的测试类遵循通用的命令约定（以Test结尾、以TestCase结尾、或者以Test开头），就几乎不用知晓该插件的存在。然而在当你想要跳过测试、排除某些测试类、或者使用一些TestNG特性的时候，了解maven-surefire-plugin的一些配置选项就很有用了。例如 mvn test -Dtest=FooTest 这样一条命令的效果是仅运行FooTest测试类，这是通过控制maven-surefire-plugin的test参数实现的。</p>
+</li>
+<li><p>build-helper-maven-plugin<br><a href="http://mojo.codehaus.org/build-helper-maven-plugin/" target="_blank" rel="noopener">http://mojo.codehaus.org/build-helper-maven-plugin/</a><br>Maven默认只允许指定一个主Java代码目录和一个测试Java代码目录，虽然这其实是个应当尽量遵守的约定，但偶尔你还是会希望能够指定多个源码目录（例如为了应对遗留项目），build-helper-maven-plugin的add-source目标就是服务于这个目的，通常它被绑定到默认生命周期的generate-sources阶段以添加额外的源码目录。需要强调的是，这种做法还是不推荐的，因为它破坏了 Maven的约定，而且可能会遇到其他严格遵守约定的插件工具无法正确识别额外的源码目录。<br>build-helper-maven-plugin的另一个非常有用的目标是attach-artifact，使用该目标你可以以classifier的形式选取部分项目文件生成附属构件，并同时install到本地仓库，也可以deploy到远程仓库。</p>
+</li>
+<li><p>exec-maven-plugin<br><a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank" rel="noopener">http://mojo.codehaus.org/exec-maven-plugin/</a><br>exec-maven-plugin很好理解，顾名思义，它能让你运行任何本地的系统程序，在某些特定情况下，运行一个Maven外部的程序可能就是最简单的问题解决方案，这就是exec:exec的用途，当然，该插件还允许你配置相关的程序运行参数。除了exec目标之外，exec-maven-plugin还提供了一个java目标，该目标要求你提供一个mainClass参数，然后它能够利用当前项目的依赖作为classpath，在同一个JVM中运行该mainClass。有时候，为了简单的演示一个命令行Java程序，你可以在POM中配置好exec-maven-plugin的相关运行参数，然后直接在命令运行mvn exec:java 以查看运行效果。</p>
+</li>
+<li><p>jetty-maven-plugin<br><a href="http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin" target="_blank" rel="noopener">http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin</a><br>在进行Web开发的时候，打开浏览器对应用进行手动的测试几乎是无法避免的，这种测试方法通常就是将项目打包成war文件，然后部署到Web容器中，再启动容器进行验证，这显然十分耗时。为了帮助开发者节省时间，jetty-maven-plugin应运而生，它完全兼容 Maven项目的目录结构，能够周期性地检查源文件，一旦发现变更后自动更新到内置的Jetty Web容器中。做一些基本配置后（例如Web应用的contextPath和自动扫描变更的时间间隔），你只要执行 mvn jetty:run ，然后在IDE中修改代码，代码经IDE自动编译后产生变更，再由jetty-maven-plugin侦测到后更新至Jetty容器，这时你就可以直接测试Web页面了。需要注意的是，jetty-maven-plugin并不是宿主于Apache或Codehaus的官方插件，因此使用的时候需要额外的配置settings.xml的pluginGroups元素，将org.mortbay.jetty这个pluginGroup加入。</p>
+</li>
+<li><p>versions-maven-plugin<br><a href="http://mojo.codehaus.org/versions-maven-plugin/" target="_blank" rel="noopener">http://mojo.codehaus.org/versions-maven-plugin/</a><br>很多Maven用户遇到过这样一个问题，当项目包含大量模块的时候，为他们集体更新版本就变成一件烦人的事情，到底有没有自动化工具能帮助完成这件事情呢？（当然你可以使用sed之类的文本操作工具，不过不在本文讨论范围）答案是肯定的，versions-maven- plugin提供了很多目标帮助你管理Maven项目的各种版本信息。例如最常用的，命令 mvn versions:set -DnewVersion=1.1-SNAPSHOT 就能帮助你把所有模块的版本更新到1.1-SNAPSHOT。该插件还提供了其他一些很有用的目标，display-dependency- updates能告诉你项目依赖有哪些可用的更新；类似的display-plugin-updates能告诉你可用的插件更新；然后use- latest-versions能自动帮你将所有依赖升级到最新版本。最后，如果你对所做的更改满意，则可以使用 mvn versions:commit 提交，不满意的话也可以使用 mvn versions:revert 进行撤销。</p>
+</li>
+</ul>
+<blockquote>
+<p>更多详情请参考<a href="https://maven.apache.org/plugins/" target="_blank" rel="noopener">https://maven.apache.org/plugins/</a></p>
+</blockquote>
+<h2 id="常用Maven命令"><a href="#常用Maven命令" class="headerlink" title="常用Maven命令"></a>常用Maven命令</h2><h3 id="生命周期-阶段描述"><a href="#生命周期-阶段描述" class="headerlink" title="生命周期    阶段描述"></a>生命周期    阶段描述</h3><ul>
+<li>mvn validate    验证项目是否正确，以及所有为了完整构建必要的信息是否可用</li>
+<li>mvn generate-sources    生成所有需要包含在编译过程中的源代码</li>
+<li>mvn process-sources    处理源代码，比如过滤一些值</li>
+<li>mvn generate-resources    生成所有需要包含在打包过程中的资源文件</li>
+<li>mvn process-resources    复制并处理资源文件至目标目录，准备打包</li>
+<li>mvn compile    编译项目的源代码</li>
+<li>mvn process-classes    后处理编译生成的文件，例如对Java类进行字节码增强（bytecode enhancement）</li>
+<li>mvn generate-test-sources    生成所有包含在测试编译过程中的测试源码</li>
+<li>mvn process-test-sources    处理测试源码，比如过滤一些值</li>
+<li>mvn generate-test-resources    生成测试需要的资源文件</li>
+<li>mvn process-test-resources    复制并处理测试资源文件至测试目标目录</li>
+<li>mvn test-compile    编译测试源码至测试目标目录</li>
+<li>mvn test    使用合适的单元测试框架运行测试。这些测试应该不需要代码被打包或发布</li>
+<li>mvn prepare-package    在真正的打包之前，执行一些准备打包必要的操作。这通常会产生一个包的展开的处理过的版本（将会在Maven 2.1+中实现）</li>
+<li>mvn package    将编译好的代码打包成可分发的格式，如JAR，WAR，或者EAR</li>
+<li>mvn pre-integration-test    执行一些在集成测试运行之前需要的动作。如建立集成测试需要的环境</li>
+<li>mvn integration-test    如果有必要的话，处理包并发布至集成测试可以运行的环境</li>
+<li>mvn post-integration-test    执行一些在集成测试运行之后需要的动作。如清理集成测试环境。</li>
+<li>mvn verify    执行所有检查，验证包是有效的，符合质量规范</li>
+<li>mvn install    安装包至本地仓库，以备本地的其它项目作为依赖使用</li>
+<li>mvn deploy    复制最终的包至远程仓库，共享给其它开发人员和项目（通常和一次正式的发布相关）<blockquote>
+<p>使用参数<br>Dmaven.test.skip=true: 跳过单元测试(eg: mcn clean package -Dmaven.test.skip=true)</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="dependencies和dependencyManagement，plugins和pluginManagement"><a href="#dependencies和dependencyManagement，plugins和pluginManagement" class="headerlink" title="dependencies和dependencyManagement，plugins和pluginManagement"></a>dependencies和dependencyManagement，plugins和pluginManagement</h2><ul>
+<li>有什么区别？<blockquote>
+<p>dependencyManagement是表示依赖jar包的声明，即你在项目中的dependencyManagement下声明了依赖，maven不会加载该依赖，dependencyManagement声明可以被继承。<br>dependencyManagement的一个使用案例是当有父子项目的时候，父项目中可以利用dependencyManagement声明子项目中需要用到的依赖jar包，之后，当某个或者某几个子项目需要加载该插件的时候，就可以在子项目中dependencies节点只配置 groupId 和 artifactId就可以完成插件的引用。<br>dependencyManagement主要是为了统一管理插件，确保所有子项目使用的插件版本保持一致，类似的还是plugins和pluginManagement。</p>
+</blockquote>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+        <div class="reward-container">
+  <div>打赏一下！</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="汤吉林 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="汤吉林 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Maven/" rel="tag">@ Maven</a>
+              <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" rel="tag">@ 项目管理工具</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/10/31/Markdown%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" rel="next" title="Markdown基本使用">
+                  <i class="fa fa-chevron-left"></i> Markdown基本使用
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/04/SpringBoot%E5%85%AD%E5%A4%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E7%8B%AC%E7%AB%8B%E7%9A%84Spring%E5%BA%94%E7%94%A8/" rel="prev" title="SpringBoot六大特性之独立的Spring应用">
+                  SpringBoot六大特性之独立的Spring应用 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NzM2My8yMzg2Mw=="></div>
+  </div>
+  
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="comments"></div>
+            </div>
+        </div>
+      </div>
+      <script>
+        window.addEventListener('tabs:register', () => {
+          let activeClass = '';
+            activeClass = localStorage.getItem('comments_active') || activeClass;
+          if (activeClass) {
+            let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+            if (activeTab) {
+              activeTab.click();
+            }
+          }
+        });
+        window.addEventListener('tabs:click', event => {
+          let commentClass = event.target.classList[1];
+          localStorage.setItem('comments_active', commentClass);
+        });
+      </script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven入门简介："><span class="nav-number">1.</span> <span class="nav-text">Maven入门简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">2.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven是什么"><span class="nav-number">2.1.</span> <span class="nav-text">Maven是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。"><span class="nav-number">2.1.1.</span> <span class="nav-text">Maven 是一个项目管理工具。它负责管理项目开发过程中的几乎所有的东西。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本"><span class="nav-number">2.2.</span> <span class="nav-text">版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven有自己的版本定义和规则"><span class="nav-number">2.2.1.</span> <span class="nav-text">maven有自己的版本定义和规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建"><span class="nav-number">2.3.</span> <span class="nav-text">构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。"><span class="nav-number">2.3.1.</span> <span class="nav-text">maven支持许多种的应用程序类型，对于每一种支持的应用程序类型都定义好了一组构建规则和工具集。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出物管理"><span class="nav-number">2.4.</span> <span class="nav-text">输出物管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为"><span class="nav-number">2.4.1.</span> <span class="nav-text">maven可以管理项目构建的产物，并将其加入到用户库中。这个功能可以用于项目组和其他部门之间的交付行为</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖关系"><span class="nav-number">2.5.</span> <span class="nav-text">依赖关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为"><span class="nav-number">2.5.1.</span> <span class="nav-text">maven对依赖关系的特性进行细致的分析和划分，避免开发过程中的依赖混乱和相互污染行为</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档和构建结果"><span class="nav-number">2.6.</span> <span class="nav-text">文档和构建结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。"><span class="nav-number">2.6.1.</span> <span class="nav-text">maven的site命令支持各种文档信息的发布，包括构建过程的各种输出，javadoc，产品文档等。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目关系"><span class="nav-number">2.7.</span> <span class="nav-text">项目关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理"><span class="nav-number">2.7.1.</span> <span class="nav-text">一个大型的项目通常有几个小项目或者模块组成，用maven可以很方便地管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移植性管理"><span class="nav-number">2.8.</span> <span class="nav-text">移植性管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven可以针对不同的开发场景，输出不同种类的输出结果"><span class="nav-number">2.8.1.</span> <span class="nav-text">maven可以针对不同的开发场景，输出不同种类的输出结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven的好处"><span class="nav-number">2.9.</span> <span class="nav-text">Maven的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven相似项目管理器"><span class="nav-number">2.10.</span> <span class="nav-text">Maven相似项目管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。"><span class="nav-number">2.10.1.</span> <span class="nav-text">据我所知，像maven类似功能的管理器还有一些，但能与maven媲美的估计就只有Gradle了。它相比maven的优点是简洁，它使用Grovvy脚本编写，Groovy是一种基于JVM的动态语言，不同于maven配置xml。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven的生命周期"><span class="nav-number">2.11.</span> <span class="nav-text">Maven的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven把项目的构建划分为不同的生命周期-lifecycle-。粗略一点的话，它这个过程-phase-包括：编译-Compile-、测试-Test-、打包-Package-、集成测试-Install-、验证-Clean-、部署-Deploy-。maven中所有的执行动作-goal-都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。"><span class="nav-number">2.11.1.</span> <span class="nav-text">maven把项目的构建划分为不同的生命周期(lifecycle)。粗略一点的话，它这个过程(phase)包括：编译(Compile)、测试(Test)、打包(Package)、集成测试(Install)、验证(Clean)、部署(Deploy)。maven中所有的执行动作(goal)都需要指明自己在这个过程中的执行位置，然后maven执行的时候，就依照过程的发展依次调用这些goal进行各种处理。这个也是maven的一个基本调度机制。一般来说，位置稍后的过程都会依赖于之前的过程。当然，maven同样提供了配置文件，可以依照用户要求，跳过某些阶段。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven的标准工程结构"><span class="nav-number">2.12.</span> <span class="nav-text">Maven的标准工程结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven的标准工程结构如下："><span class="nav-number">2.12.1.</span> <span class="nav-text">Maven的标准工程结构如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven的”约定优于配置”"><span class="nav-number">2.13.</span> <span class="nav-text">Maven的”约定优于配置”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下："><span class="nav-number">2.13.1.</span> <span class="nav-text">所谓的”约定优于配置”，在maven中并不是完全不可以修改的，他们只是一些配置的默认值而已。但是除非必要，并不需要去修改那些约定内容。maven默认的文件存放结构如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven的版本规范"><span class="nav-number">2.14.</span> <span class="nav-text">Maven的版本规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven使用如下几个要素来唯一定位某一个输出物："><span class="nav-number">2.14.1.</span> <span class="nav-text">maven使用如下几个要素来唯一定位某一个输出物：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网下载地址"><span class="nav-number">3.1.</span> <span class="nav-text">官网下载地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境变量"><span class="nav-number">3.2.</span> <span class="nav-text">配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意："><span class="nav-number">3.2.1.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装maven之前，必须先确保你的机器中已经安装了JDK。maven3-3-版本需要jdkj-7-以上的支持"><span class="nav-number">3.2.2.</span> <span class="nav-text">安装maven之前，必须先确保你的机器中已经安装了JDK。maven3.3+版本需要jdkj.7+以上的支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地仓储配置"><span class="nav-number">3.3.</span> <span class="nav-text">本地仓储配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting-xml文件。可以参照下图配置本地仓储位置。"><span class="nav-number">3.3.1.</span> <span class="nav-text">从中央仓库下载的jar包，都会统一存放到本地仓库中。我们需要配置本地仓库的位置。打开maven安装目录，打开conf目录下的setting.xml文件。可以参照下图配置本地仓储位置。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一个Maven工程"><span class="nav-number">4.</span> <span class="nav-text">第一个Maven工程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在Eclipse中创建Maven工程"><span class="nav-number">4.1.</span> <span class="nav-text">在Eclipse中创建Maven工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven插件"><span class="nav-number">4.2.</span> <span class="nav-text">Maven插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Eclipse中创建Maven工程，需要安装Maven插件。"><span class="nav-number">4.3.</span> <span class="nav-text">在Eclipse中创建Maven工程，需要安装Maven插件。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven环境配置"><span class="nav-number">4.4.</span> <span class="nav-text">Maven环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Maven工程"><span class="nav-number">4.5.</span> <span class="nav-text">创建Maven工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Maven进行构建"><span class="nav-number">4.6.</span> <span class="nav-text">使用Maven进行构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Eclipse中构建方式"><span class="nav-number">4.6.1.</span> <span class="nav-text">Eclipse中构建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven命令构建方式"><span class="nav-number">4.6.2.</span> <span class="nav-text">Maven命令构建方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用指导"><span class="nav-number">5.</span> <span class="nav-text">使用指导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何添加外部依赖jar包"><span class="nav-number">5.1.</span> <span class="nav-text">如何添加外部依赖jar包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。"><span class="nav-number">5.1.1.</span> <span class="nav-text">在Maven工程中添加依赖jar包，很简单，只要在POM文件中引入对应的标签即可。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考下例："><span class="nav-number">5.1.2.</span> <span class="nav-text">参考下例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maven依赖范围"><span class="nav-number">5.2.</span> <span class="nav-text">Maven依赖范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何寻找jar包"><span class="nav-number">5.3.</span> <span class="nav-text">如何寻找jar包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可以在Maven仓库地址站点搜寻你想要的jar包版本"><span class="nav-number">5.3.1.</span> <span class="nav-text">可以在Maven仓库地址站点搜寻你想要的jar包版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用Maven插件-Plugin"><span class="nav-number">5.4.</span> <span class="nav-text">如何使用Maven插件(Plugin)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要添加Maven插件，可以在pom-xml文件中添加标签。"><span class="nav-number">5.4.1.</span> <span class="nav-text">要添加Maven插件，可以在pom.xml文件中添加标签。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签用来配置插件的一些使用参数。"><span class="nav-number">5.4.2.</span> <span class="nav-text">标签用来配置插件的一些使用参数。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何一次编译多个工程"><span class="nav-number">5.5.</span> <span class="nav-text">如何一次编译多个工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在Maven中，允许一个Maven-Project中有多个Maven-Module"><span class="nav-number">5.5.1.</span> <span class="nav-text">在Maven中，允许一个Maven Project中有多个Maven Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">5.5.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这时打开XXX中的pom-xml可以看到其中有以下标签"><span class="nav-number">5.5.3.</span> <span class="nav-text">这时打开XXX中的pom.xml可以看到其中有以下标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择编译XXX时，会依次对它的所有Module执行相同操作。"><span class="nav-number">5.5.4.</span> <span class="nav-text">选择编译XXX时，会依次对它的所有Module执行相同操作。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用Maven插件"><span class="nav-number">5.6.</span> <span class="nav-text">常用Maven插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用Maven命令"><span class="nav-number">5.7.</span> <span class="nav-text">常用Maven命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期-阶段描述"><span class="nav-number">5.7.1.</span> <span class="nav-text">生命周期    阶段描述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">6.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dependencies和dependencyManagement，plugins和pluginManagement"><span class="nav-number">6.1.</span> <span class="nav-text">dependencies和dependencyManagement，plugins和pluginManagement</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="汤吉林"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">汤吉林</p>
+  <div class="site-description" itemprop="description">Java-SpringBoot</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tangjilin-java" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;tangjilin-java" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tjl1037766906@163.com" title="E-Mail &amp;rarr; mailto:tjl1037766906@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope-open"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:abtjl@foxmail.com" title="QQ &amp;rarr; mailto:abtjl@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/6892464345" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;6892464345" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.abtjlwxj.club/tscommunity/" title="http:&#x2F;&#x2F;www.abtjlwxj.club&#x2F;tscommunity&#x2F;" rel="noopener" target="_blank">汤氏问答社区</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.bilibili.com/" title="https:&#x2F;&#x2F;www.bilibili.com&#x2F;" rel="noopener" target="_blank">哔哩哔哩</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com&#x2F;" rel="noopener" target="_blank">百度一下</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020--04--18</span>
+  <span class="with-love" id="animate>
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">汤吉林</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">26k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">48 分钟</span>
+</div>
+  <div class="powered-by">个人专属
+  </div>
+  <span class="post-meta-divider">|</span>
+  Java
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '2NBRYRwqiaFPPsza749EEhdB-9Nh9j0Va',
+    appKey: 'DltMwnx4YR5K2An1u5EJUsOI',
+    placeholder: "快来发表你的看法吧！",
+    avatar: 'hide',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
