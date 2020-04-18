@@ -98,8 +98,8 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: next
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html  git@github.com:tangjilin-java/tangjilin-java.github.io.git
+## Docs: https://hexo.io/docs/deployment.html    https://tangjilin-java:5130231998tjl@github.com/tangjilin-java/tangjilin-java.github.io.git
 deploy:
   type: git
-  repo: https://tangjilin-java:5130231998tjl@github.com/tangjilin-java/tangjilin-java.github.io.git
+  repo: git@github.com:tangjilin-java/tangjilin-java.github.io.git
   branch: master
